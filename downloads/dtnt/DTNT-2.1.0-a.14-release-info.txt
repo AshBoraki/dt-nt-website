@@ -1,0 +1,16 @@
+Product: Denali Tech Net-Tools
+Company: Denali Tech Inc
+Version: 2.1.0-a.14
+InformationalVersion: 2.1.0-a.14
+ReleaseChannel: Store
+RuntimeIdentifier: win-x64
+PublishedAt: 2026-05-04 16:23:44 -05:00
+InstallStyle: Microsoft Store
+StoreProductId: 9PFKHZ8M32HJ
+StoreUrl: https://apps.microsoft.com/detail/9PFKHZ8M32HJ
+
+Release notes:
+- Store-approved Windows build for Denali Tech Net-Tools.
+- IP Scanner now follows the active Windows network context more reliably when the connected subnet changes.
+- Selected-device port checks are available from the IP Scanner detail workflow for common field ports and one custom port.
+- Microsoft Store is the recommended install path. The website no longer presents an older portable ZIP as the current build.

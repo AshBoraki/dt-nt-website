@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dt-nt.com/sitemap.xml

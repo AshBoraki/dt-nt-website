@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>DTNT Legal | EULA, Terms, Privacy, and Refund Policy</title>
+    <meta name="description" content="DTNT legal terms for Denali Tech Net-Tools, including the software license, website terms, privacy notice, and refund policy.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://dt-nt.com/legal/">
+    <script src="/analytics-config.js"></script>
+    <script src="/analytics.js"></script>
+    <style>
+        :root {
+            --bg: #edf3f0;
+            --paper: rgba(255, 255, 255, 0.88);
+            --band: #e7f0ed;
+            --ink: #15283a;
+            --muted: #66798a;
+            --line: #cedbe0;
+            --accent: #d97716;
+            --accent-strong: #bf6510;
+            --accent-soft: #fff0e0;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Inter, system-ui, sans-serif;
+            color: var(--ink);
+            background: var(--bg);
+        }
+
+        a { color: inherit; }
+
+        .wrap {
+            width: min(1040px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(16px);
+            background: rgba(237, 243, 240, 0.92);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .topbar {
+            min-height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-weight: 800;
+        }
+
+        .brand-mark {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            background: #fff;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+        }
+
+        .brand-mark img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .brand-copy small,
+        .hero-copy,
+        .section-copy,
+        .meta,
+        .policy p,
+        .policy li,
+        .footer-copy {
+            color: var(--muted);
+            line-height: 1.68;
+        }
+
+        .nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.95rem;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--muted);
+        }
+
+        .nav-shell {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            margin-left: auto;
+            position: relative;
+        }
+
+        .nav-toggle {
+            display: none;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--ink);
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(21, 40, 58, 0.05);
+        }
+
+        .nav-toggle:hover {
+            background: #fff;
+        }
+
+        .nav-toggle:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .nav-toggle-lines {
+            display: grid;
+            gap: 5px;
+        }
+
+        .nav-toggle-lines span {
+            display: block;
+            width: 18px;
+            height: 2px;
+            border-radius: 999px;
+            background: currentColor;
+        }
+
+        main {
+            padding: 34px 0 44px;
+        }
+
+        .hero {
+            padding: 28px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--paper);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.54rem 0.9rem;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            border: 1px solid #f1cfb1;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 1rem 0 0;
+            font-size: clamp(2.4rem, 5vw, 4.4rem);
+            line-height: 0.98;
+            letter-spacing: 0;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: clamp(1.8rem, 3.3vw, 2.5rem);
+            line-height: 1.06;
+        }
+
+        .hero-copy {
+            margin-top: 1rem;
+            max-width: 62ch;
+            font-size: 1.04rem;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 1.2rem;
+        }
+
+        .meta-card,
+        .policy,
+        .support-card {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.72);
+        }
+
+        .meta-card {
+            padding: 0.95rem;
+        }
+
+        .meta-card strong {
+            display: block;
+            margin-bottom: 0.32rem;
+            font-size: 1rem;
+        }
+
+        .jump-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.25rem;
+        }
+
+        .jump-links a,
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 46px;
+            padding: 0 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            background: #fff;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .jump-links a:hover,
+        .button:hover {
+            background: #fff;
+            border-color: #b9c9d0;
+        }
+
+        .layout {
+            display: grid;
+            gap: 18px;
+            margin-top: 22px;
+        }
+
+        .policy {
+            padding: 26px;
+            scroll-margin-top: 92px;
+        }
+
+        .section-copy {
+            margin-top: 0.8rem;
+            max-width: 72ch;
+        }
+
+        .policy h3 {
+            margin-top: 1.35rem;
+            margin-bottom: 0.45rem;
+            font-size: 1.1rem;
+        }
+
+        .policy p,
+        .policy ul {
+            margin: 0.55rem 0 0;
+        }
+
+        .policy ul {
+            padding-left: 1.2rem;
+        }
+
+        .support-card {
+            margin-top: 22px;
+            padding: 22px 24px;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .button-primary {
+            background: var(--accent);
+            color: #fff;
+            border-color: transparent;
+        }
+
+        .button-primary:hover {
+            background: var(--accent-strong);
+        }
+
+        footer {
+            padding: 0 0 34px;
+        }
+
+        .footer-copy {
+            font-size: 0.94rem;
+        }
+
+        @media (max-width: 860px) {
+            .meta-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 720px) {
+            .topbar {
+                padding: 12px 0;
+            }
+
+            .nav-shell {
+                margin-left: auto;
+            }
+
+            .nav-toggle {
+                display: inline-flex;
+            }
+
+            .nav {
+                position: absolute;
+                top: calc(100% + 10px);
+                right: 0;
+                z-index: 45;
+                display: none;
+                width: min(260px, calc(100vw - 24px));
+                padding: 12px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+                border: 1px solid var(--line);
+                border-radius: 8px;
+                background: rgba(255, 255, 255, 0.98);
+                box-shadow: 0 12px 26px rgba(21, 40, 58, 0.12);
+            }
+
+            .nav.is-open {
+                display: flex;
+            }
+
+            .nav a {
+                color: var(--ink);
+                padding: 0.45rem 0.35rem;
+            }
+
+            .meta-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero,
+            .policy,
+            .support-card {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="wrap topbar">
+            <a class="brand" href="/">
+                <span class="brand-mark">
+                    <img src="/Video/dtnt/dtnt-app-mark.png?v=20260413e" alt="DTNT mark">
+                </span>
+                <span class="brand-copy">
+                    <span>DTNT</span><br>
+                    <small>Denali Tech Net-Tools</small>
+                </span>
+            </a>
+            <div class="nav-shell">
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open page menu" data-nav-toggle>
+                    <span class="nav-toggle-lines" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+                <nav class="nav" id="site-nav" data-site-nav aria-label="DTNT legal navigation">
+                    <a href="/">Product</a>
+                    <a href="/buy/">Buy</a>
+                    <a href="#eula">EULA</a>
+                    <a href="#privacy">Privacy</a>
+                    <a href="#refund">Refunds</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrap">
+            <section class="hero">
+                <div class="eyebrow">DTNT Legal</div>
+                <h1>Terms for the DTNT software, website, and Pro purchase.</h1>
+                <p class="hero-copy">These DTNT policies apply to the Windows software, the DTNT website purchase flow, and the Pro activation path. Effective date: April 14, 2026.</p>
+
+                <div class="meta-grid">
+                    <div class="meta-card">
+                        <strong>Publisher</strong>
+                        <div class="meta">Denali Tech Inc</div>
+                    </div>
+                    <div class="meta-card">
+                        <strong>Product</strong>
+                        <div class="meta">Denali Tech Net-Tools (DTNT)</div>
+                    </div>
+                    <div class="meta-card">
+                        <strong>Commercial model</strong>
+                        <div class="meta">Free plus one-time Pro purchase</div>
+                    </div>
+                    <div class="meta-card">
+                        <strong>Support contact</strong>
+                        <div class="meta"><a href="mailto:Hello@denalitechs.com">Hello@denalitechs.com</a></div>
+                    </div>
+                </div>
+
+                <div class="jump-links">
+                    <a href="#eula">Software License</a>
+                    <a href="#terms">Website Terms</a>
+                    <a href="#privacy">Privacy Notice</a>
+                    <a href="#refund">Refund Policy</a>
+                </div>
+            </section>
+
+            <div class="layout">
+                <article class="policy" id="eula">
+                    <h2>End User License Agreement</h2>
+                    <p class="section-copy">By downloading, installing, activating, or using DTNT, you agree to this software license.</p>
+
+                    <h3>1. License grant</h3>
+                    <p>Denali Tech Inc grants you a limited, non-exclusive, revocable, non-transferable license to use DTNT on Windows devices you own or control for your own internal business or personal use.</p>
+                    <p>A paid Pro purchase covers one purchaser or one internal technician seat and may be activated on up to three Windows devices under that same purchaser's control, unless Denali Tech gives you a different written arrangement.</p>
+
+                    <h3>2. What you may and may not do</h3>
+                    <ul>
+                        <li>You may use DTNT to inspect, survey, test, and document networks and devices you own, operate, or are authorized to assess.</li>
+                        <li>You may make reasonable backup copies for recovery purposes.</li>
+                        <li>You may not resell, sublicense, lease, share, or distribute DTNT except as Denali Tech expressly allows in writing.</li>
+                        <li>You may not remove branding, notices, or technical protections, or bypass Free and Pro limitations.</li>
+                        <li>You may not reverse engineer DTNT except to the limited extent applicable law gives you that right and does not allow it to be waived.</li>
+                    </ul>
+
+                    <h3>3. Activation and delivery</h3>
+                    <p>DTNT Pro is currently fulfilled through a Denali Tech purchase flow that can include Stripe-hosted checkout, activation email delivery, and signed entitlement records. DTNT itself may be installed from Microsoft Store or from Denali Tech download pages. Activation can require a purchase email plus activation code, a signed license file fallback, or another entitlement method Denali Tech later makes available.</p>
+                    <p>Keep your purchase receipt and delivery email. If you replace hardware or need a reasonable activation reset, contact Denali Tech. Reset or reissue decisions are made to prevent abuse and protect legitimate customers.</p>
+
+                    <h3>4. Updates and future releases</h3>
+                    <p>Your purchase includes access to the Pro features Denali Tech makes generally available for the licensed DTNT product line. Denali Tech may ship updates, patches, feature changes, pricing changes for new customers, separate products, or future paid upgrades.</p>
+
+                    <h3>5. Network and field-use responsibility</h3>
+                    <p>DTNT is an operator tool. You are responsible for how you use scan, discovery, speed, profile, and export functions. That responsibility includes local web-interface checks, Wi-Fi profile or saved-key reveal actions, and any exported inventory or snapshot files. You must follow applicable laws, policies, client authorizations, and safety rules. DTNT is not intended for emergency response, safety-critical, or life-support use.</p>
+
+                    <h3>6. Ownership</h3>
+                    <p>DTNT is licensed, not sold. Denali Tech Inc and its licensors retain all ownership, title, and intellectual property rights in the software, branding, screenshots, and related materials.</p>
+
+                    <h3>7. Warranty disclaimer</h3>
+                    <p>Except where law does not allow it, DTNT is provided "as is" and "as available." Denali Tech disclaims implied warranties of merchantability, fitness for a particular purpose, title, and non-infringement. Denali Tech does not guarantee uninterrupted operation, perfect compatibility with every Windows environment, or complete detection of every network condition.</p>
+
+                    <h3>8. Limitation of liability</h3>
+                    <p>To the maximum extent allowed by law, Denali Tech will not be liable for indirect, incidental, special, consequential, exemplary, or punitive damages, or for lost profits, lost data, lost business, or procurement of substitute services. Denali Tech's total liability arising out of DTNT will not exceed the amount you paid for the applicable DTNT license in the twelve months before the claim.</p>
+                </article>
+
+                <article class="policy" id="terms">
+                    <h2>Website Terms and Commercial Terms</h2>
+                    <p class="section-copy">These terms apply to DTNT website pages, downloads, checkout routes, and customer communications tied to the product.</p>
+
+                    <h3>1. Orders and pricing</h3>
+                    <p>DTNT Free is currently offered as a no-charge download. DTNT Pro is sold as a one-time purchase unless Denali Tech clearly states otherwise before checkout. Pricing, launch offers, and availability can change prospectively.</p>
+
+                    <h3>2. Payment processing</h3>
+                    <p>Payments may be processed by Stripe or another payment provider shown during checkout. Denali Tech does not store full payment card numbers on the DTNT website or inside the desktop app.</p>
+
+                    <h3>3. Delivery expectations</h3>
+                    <p>After successful payment, DTNT may provide immediate website instructions, activation email delivery, automated activation fulfillment, or a manual support-assisted fallback. Denali Tech may hold or cancel an order that appears fraudulent, abusive, duplicated, or technically impossible to fulfill.</p>
+
+                    <h3>4. Supported systems</h3>
+                    <p>DTNT is a Windows desktop product. Public product pages currently represent DTNT as intended for Windows 10 and Windows 11. You are responsible for confirming your environment meets the published system and packaging requirements before purchase.</p>
+
+                    <h3>5. Support scope</h3>
+                    <p>Support for DTNT is provided through the channels Denali Tech publishes, currently including <a href="mailto:Hello@denalitechs.com">Hello@denalitechs.com</a>. Unless Denali Tech separately agrees otherwise in writing, support is offered on a commercially reasonable basis and without a guaranteed response time, uptime commitment, or custom consulting entitlement.</p>
+
+                    <h3>6. Accurate use of the site</h3>
+                    <p>You agree not to interfere with the site, scrape private checkout data, abuse support channels, or use the purchase flow to commit fraud, chargeback abuse, or unauthorized testing.</p>
+
+                    <h3>7. Governing law</h3>
+                    <p>To the extent legally permitted, DTNT website and sales terms are governed by Illinois law, without regard to conflict-of-law rules, except where mandatory consumer-protection law in your home jurisdiction says otherwise.</p>
+                </article>
+
+                <article class="policy" id="privacy">
+                    <h2>DTNT Privacy Notice</h2>
+                    <p class="section-copy">This notice covers the DTNT sales pages, legal pages, support intake, checkout-linked communications, and the software-related records Denali Tech keeps to fulfill orders and activation.</p>
+
+                    <h3>1. Information we collect</h3>
+                    <ul>
+                        <li>Contact details you provide, such as your name, email address, and support messages.</li>
+                        <li>Order and payment metadata from Stripe or other providers, such as order identifiers, receipt details, and billing status.</li>
+                        <li>Activation and licensing records needed to generate, verify, replace, or support DTNT Pro entitlements.</li>
+                        <li>Basic website logs and anti-abuse information generated by your browser or our host, such as IP address, timestamps, pages requested, and user-agent data.</li>
+                    </ul>
+
+                    <h3>2. DTNT app data</h3>
+                    <p>DTNT is designed primarily as a local Windows tool. Network scan results, Wi-Fi profile data, saved exports, activation records, purchase-email plus activation-code state, fallback activation files, and local diagnostic logs are generally stored on your device unless you choose to export, email, upload, or otherwise share them.</p>
+                    <p>When you use the Profiles workspace, DTNT can read saved Windows Wi-Fi profile names, security labels, and saved keys from Windows so it can show the local profile state on that machine. Saved keys are shown or copied locally when you choose to reveal them, and they are not included in the DTNT profile export format by default.</p>
+                    <p>When you run IP scanner and related discovery workflows, DTNT can send ping, DNS, TCP-connect, ARP-assisted, and short HTTP(S) requests across the local range you select in order to identify responsive devices and likely web interfaces. DTNT may temporarily read headers and a small body snippet to classify a local login page, but that body sample is not kept as a saved export field by default.</p>
+                    <p>Local diagnostic logs can contain timestamps, component names, status messages, and exception details produced by the app on your device.</p>
+                    <p>Some DTNT features necessarily communicate with third-party endpoints that you trigger, such as payment providers, download hosts, update metadata, speed-test services, DNS or web targets, or links you open from inside the app.</p>
+
+                    <h3>3. How we use information</h3>
+                    <ul>
+                        <li>To deliver downloads, activation materials, receipts, and order support.</li>
+                        <li>To prevent fraud, misuse, duplicate fulfillment, or activation abuse.</li>
+                        <li>To answer support questions and improve release, packaging, and fulfillment quality.</li>
+                        <li>To comply with legal obligations and protect Denali Tech, its customers, and its systems.</li>
+                    </ul>
+
+                    <h3>4. Sharing</h3>
+                    <p>Denali Tech does not sell personal information. We may share limited information with service providers that help us operate DTNT, such as payment processors, email or hosting providers, release hosting services, and support tooling, and where required by law.</p>
+
+                    <h3>5. Retention</h3>
+                    <p>We keep order, activation, and support records for as long as reasonably needed to fulfill purchases, support reinstall or activation questions, resolve disputes, meet tax and accounting requirements, and enforce our terms.</p>
+
+                    <h3>6. Choices and requests</h3>
+                    <p>You can contact <a href="mailto:Hello@denalitechs.com">Hello@denalitechs.com</a> to request access, correction, or deletion of personal information that Denali Tech actually controls, subject to legal, accounting, fraud-prevention, and security retention needs.</p>
+                </article>
+
+                <article class="policy" id="refund">
+                    <h2>Refund Policy</h2>
+                    <p class="section-copy">This refund policy applies to DTNT Pro software purchases unless Denali Tech states a different written offer before payment.</p>
+
+                    <h3>1. Standard refund window</h3>
+                    <p>For first-time DTNT Pro purchases, contact Denali Tech within fourteen calendar days of the charge if you need a refund review.</p>
+
+                    <h3>2. When refunds are usually approved</h3>
+                    <ul>
+                        <li>Duplicate or accidental charges.</li>
+                        <li>DTNT Pro cannot be delivered or activated on a supported Windows system and Denali Tech cannot resolve the issue within a reasonable support window.</li>
+                        <li>The purchased item was materially different from what the DTNT sales page described at the time of purchase.</li>
+                    </ul>
+
+                    <h3>3. Limits</h3>
+                    <p>Because DTNT is downloadable software and activation can be delivered immediately, refunds can be denied after successful delivery and substantial use, except where applicable law requires otherwise. Refund requests can also be denied for fraud, abuse, chargeback misuse, or purchases made in violation of these terms.</p>
+
+                    <h3>4. How to request one</h3>
+                    <p>Email <a href="mailto:Hello@denalitechs.com">Hello@denalitechs.com</a> with the checkout email address, order reference, and a short explanation of the problem. If Denali Tech approves the refund, it is returned to the original payment method through the payment provider.</p>
+                </article>
+            </div>
+
+            <section class="support-card" id="contact">
+                <h2>Need a direct answer?</h2>
+                <p class="section-copy">For order, activation, or policy questions tied to Windows checkout or Windows activation, contact Denali Tech at <a href="mailto:Hello@denalitechs.com">Hello@denalitechs.com</a>. Include the email address used at checkout and any receipt or session reference you have.</p>
+                <div class="actions">
+                    <a class="button button-primary" href="/buy/">Go to DTNT checkout</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="wrap footer-copy">
+            DTNT by Denali Tech for Wi-Fi analysis, IP work, speed tests, and quick field checks on Windows.
+        </div>
+    </footer>
+    <script src="/site-nav.js"></script>
+</body>
+</html>

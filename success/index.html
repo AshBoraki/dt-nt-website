@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>DTNT Purchase Complete</title>
+    <meta name="description" content="DTNT Pro purchase confirmation and delivery steps from Denali Tech.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://dt-nt.com/success/">
+    <script src="/analytics-config.js"></script>
+    <script src="/analytics.js"></script>
+    <style>
+        :root {
+            --bg: #edf3f0;
+            --paper: #ffffff;
+            --ink: #15283a;
+            --muted: #66798a;
+            --line: #cedbe0;
+            --accent: #d97716;
+            --shadow: 0 18px 36px rgba(21, 40, 58, 0.08);
+        }
+        * { box-sizing: border-box; }
+        a { color: inherit; }
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Inter, system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+        }
+        .wrap {
+            width: min(1320px, calc(100% - 48px));
+            margin: 0 auto;
+        }
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            background: rgba(237, 243, 240, 0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--line);
+        }
+        .topbar-inner {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.85rem;
+            text-decoration: none;
+        }
+        .brand img {
+            width: 40px;
+            height: 40px;
+            padding: 3px;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            background: #fff;
+            object-fit: contain;
+        }
+        .brand-copy {
+            display: grid;
+            gap: 0.12rem;
+        }
+        .brand-copy strong {
+            font-size: 0.98rem;
+            line-height: 1.1;
+        }
+        .brand-copy span {
+            color: var(--muted);
+            font-size: 0.89rem;
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+        .nav a {
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 0.92rem;
+            font-weight: 700;
+        }
+        .nav a:hover { color: var(--ink); }
+
+        .nav-shell {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            margin-left: auto;
+            position: relative;
+        }
+
+        .nav-toggle {
+            display: none;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--ink);
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(21, 40, 58, 0.05);
+        }
+
+        .nav-toggle:hover {
+            background: #fff;
+        }
+
+        .nav-toggle:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .nav-toggle-lines {
+            display: grid;
+            gap: 5px;
+        }
+
+        .nav-toggle-lines span {
+            display: block;
+            width: 18px;
+            height: 2px;
+            border-radius: 999px;
+            background: currentColor;
+        }
+        .page {
+            padding: 30px 0 56px;
+        }
+        .shell {
+            width: min(860px, 100%);
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.84);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 28px;
+            box-shadow: var(--shadow);
+        }
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.54rem 0.9rem;
+            border-radius: 999px;
+            background: #fff0e0;
+            color: var(--accent);
+            border: 1px solid #f1cfb1;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        h1 {
+            margin: 0;
+            margin-top: 1rem;
+            font-size: clamp(2.1rem, 4vw, 3.2rem);
+            line-height: 1.04;
+        }
+        p {
+            color: var(--muted);
+            line-height: 1.7;
+            font-size: 1rem;
+            max-width: 60ch;
+        }
+        .steps {
+            margin: 1.2rem 0 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 0.9rem;
+        }
+        .step {
+            display: grid;
+            grid-template-columns: 36px minmax(0, 1fr);
+            gap: 0.8rem;
+            align-items: start;
+            padding: 0.95rem 1rem;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.72);
+        }
+        .step-index {
+            width: 36px;
+            height: 36px;
+            display: inline-grid;
+            place-items: center;
+            border-radius: 8px;
+            background: #fff0e0;
+            color: var(--accent);
+            font-weight: 800;
+        }
+        .step strong {
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+        .support {
+            margin-top: 1rem;
+            padding: 1rem;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.7);
+        }
+        .downloads {
+            margin-top: 1rem;
+            padding: 1rem;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.74);
+        }
+        .downloads strong {
+            display: block;
+            margin-bottom: 0.35rem;
+        }
+        .advanced-details {
+            margin-top: 0.9rem;
+            border-top: 1px solid var(--line);
+            padding-top: 0.9rem;
+        }
+        .advanced-details summary {
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--ink);
+        }
+        .advanced-details p {
+            margin: 0.55rem 0 0;
+            font-size: 0.94rem;
+        }
+        .reference {
+            margin-top: 1rem;
+            padding: 0.9rem 1rem;
+            border-radius: 8px;
+            background: rgba(21, 40, 58, 0.04);
+            border: 1px dashed #b9c9d0;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+        .reference strong {
+            color: var(--ink);
+        }
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.25rem;
+        }
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 0 1.05rem;
+            border-radius: 8px;
+            border: 1px solid transparent;
+            text-decoration: none;
+            font-weight: 800;
+        }
+        .button-primary {
+            background: var(--accent);
+            color: #fff;
+        }
+        .button-secondary {
+            background: rgba(255, 255, 255, 0.78);
+            color: var(--ink);
+            border-color: #b9c9d0;
+        }
+        @media (max-width: 900px) {
+            .nav-shell {
+                margin-left: auto;
+            }
+
+            .nav-toggle {
+                display: inline-flex;
+            }
+
+            .nav {
+                position: absolute;
+                top: calc(100% + 10px);
+                right: 0;
+                z-index: 45;
+                display: none;
+                width: min(260px, calc(100vw - 24px));
+                padding: 12px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+                border: 1px solid var(--line);
+                border-radius: 8px;
+                background: rgba(255, 255, 255, 0.98);
+                box-shadow: var(--shadow);
+            }
+
+            .nav.is-open {
+                display: flex;
+            }
+
+            .nav a {
+                color: var(--ink);
+                padding: 0.45rem 0.35rem;
+            }
+        }
+        @media (max-width: 640px) {
+            .wrap {
+                width: min(100% - 24px, 100%);
+            }
+            .page {
+                padding-top: 22px;
+            }
+            .shell {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <div class="wrap topbar-inner">
+            <a class="brand" href="/">
+                <img src="/Video/dtnt/dtnt-app-mark.png?v=20260413e" alt="DTNT app mark">
+                <span class="brand-copy">
+                    <strong>DTNT</strong>
+                    <span>Denali Tech Net-Tools</span>
+                </span>
+            </a>
+            <div class="nav-shell">
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open page menu" data-nav-toggle>
+                    <span class="nav-toggle-lines" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+                <nav class="nav" id="site-nav" data-site-nav aria-label="Success navigation">
+                    <a href="/">Overview</a>
+                    <a href="/buy/">Pro</a>
+                    <a href="/#activation">Activation</a>
+                    <a href="/#contact">Support</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="page">
+        <div class="wrap">
+            <section class="shell">
+                <div class="eyebrow" id="status-eyebrow">Payment received</div>
+                <h1 id="success-title">DTNT Pro purchase complete.</h1>
+                <p id="lead-copy">Stripe has finished the checkout. If DTNT is already installed, open it now. This page will finish the Pro delivery and activation steps.</p>
+
+                <ul class="steps">
+                    <li class="step">
+                        <span class="step-index">1</span>
+                        <div>
+                            <strong id="step-one-title">Keep the Stripe receipt.</strong>
+                            <span id="step-one-copy">The receipt email is the fastest reference if you need help with delivery.</span>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <span class="step-index">2</span>
+                        <div>
+                            <strong id="step-two-title">Watch for the DTNT delivery email.</strong>
+                            <span id="step-two-copy">The paid path should deliver the activation email for this release with the purchase email reference and activation code you need in the app.</span>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <span class="step-index">3</span>
+                        <div>
+                            <strong id="step-three-title">Choose Activate Pro in Profiles.</strong>
+                            <span id="step-three-copy">Open DTNT, go to Profiles, choose Activate Pro, and enter the purchase email plus activation code from the delivery email.</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="support">
+                    <strong id="support-title">Need help with the order?</strong>
+                    <p id="support-copy">If the delivery email does not arrive or activation does not go through cleanly, contact <a data-dtnt-support-email href="mailto:Hello@denalitechs.com">Hello@denalitechs.com</a> and include the email address used at checkout.</p>
+                </div>
+
+                <p>Policy details stay available here: <a href="/legal/#eula">EULA</a>, <a href="/legal/#terms">Terms</a>, <a href="/legal/#privacy">Privacy Notice</a>, and <a href="/legal/#refund">Refund Policy</a>.</p>
+
+                <div class="downloads">
+                    <strong id="downloads-title">Open or install DTNT now.</strong>
+                    <p id="downloads-copy">If DTNT is already on this machine, open it and activate inside Profiles. If not, use the Microsoft Store path below and come right back.</p>
+                    <div class="actions">
+                        <a class="button button-primary" data-dtnt-download="preferred" data-dtnt-store-text="Get DTNT from Microsoft Store" data-dtnt-installer-text="Install DTNT for Windows" data-dtnt-fallback-text="Get DTNT for Windows" href="/">Get DTNT for Windows</a>
+                        <a class="button button-primary" id="activation-download" href="/" hidden>Download backup activation file</a>
+                        <a class="button button-primary" data-dtnt-download="appinstaller" href="/" hidden>Install DTNT</a>
+                        <a class="button button-secondary" data-dtnt-download="msix" href="/" hidden>Download MSIX</a>
+                        <a class="button button-secondary" data-dtnt-download="free" href="/" hidden>Download Portable ZIP</a>
+                        <a class="button button-secondary" data-dtnt-release-notes href="/" hidden>Release Info</a>
+                    </div>
+                    <p id="build-copy">Current build: <strong data-dtnt-version>latest</strong></p>
+                    <details class="advanced-details" id="hash-copy" data-dtnt-hash-details hidden>
+                        <summary>Verify download hash</summary>
+                        <p>SHA-256: <span data-dtnt-sha256>loading</span></p>
+                    </details>
+                </div>
+
+                <div class="support" id="delivery-panel" hidden>
+                    <strong id="delivery-title">Checking your DTNT Pro delivery.</strong>
+                    <p id="delivery-copy">Stay on this page while the activation email is prepared. The backup file is kept here only in case support asks you to use it.</p>
+                </div>
+
+                <div class="reference" id="reference-panel" hidden>
+                    <strong>Checkout reference:</strong>
+                    <span id="reference-value"></span>
+                </div>
+
+                <div class="actions">
+                    <a class="button button-primary" href="/">Back to DTNT</a>
+                    <a class="button button-secondary" href="/buy/">View Pro details</a>
+                    <a class="button button-secondary" id="support-link" href="mailto:Hello@denalitechs.com">Email support</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="/site-nav.js"></script>
+    <script src="/commerce.js"></script>
+    <script>
+        (async () => {
+            const commerce = window.DTNTCommerce;
+            if (!commerce) {
+                return;
+            }
+
+            commerce.hydrateSupportEmail(document);
+            await commerce.hydrateLatestRelease(document);
+
+            const supportLink = document.getElementById("support-link");
+            const supportTitle = document.getElementById("support-title");
+            const supportCopy = document.getElementById("support-copy");
+            const statusEyebrow = document.getElementById("status-eyebrow");
+            const successTitle = document.getElementById("success-title");
+            const leadCopy = document.getElementById("lead-copy");
+            const stepOneTitle = document.getElementById("step-one-title");
+            const stepOneCopy = document.getElementById("step-one-copy");
+            const stepTwoTitle = document.getElementById("step-two-title");
+            const stepTwoCopy = document.getElementById("step-two-copy");
+            const downloadsTitle = document.getElementById("downloads-title");
+            const downloadsCopy = document.getElementById("downloads-copy");
+            const buildCopy = document.getElementById("build-copy");
+            const hashCopy = document.getElementById("hash-copy");
+            const activationDownload = document.getElementById("activation-download");
+            const deliveryPanel = document.getElementById("delivery-panel");
+            const deliveryTitle = document.getElementById("delivery-title");
+            const deliveryCopy = document.getElementById("delivery-copy");
+            const referencePanel = document.getElementById("reference-panel");
+            const referenceValue = document.getElementById("reference-value");
+            const params = new URLSearchParams(window.location.search);
+            const sessionId = params.get("session_id") || params.get("checkout_session_id");
+            const paymentIntentId = params.get("payment_intent");
+            const paymentLinkId = params.get("payment_link");
+
+            const checkoutReference = sessionId || paymentIntentId || paymentLinkId;
+            let purchaseTracked = false;
+            commerce.trackEvent("dtnt_checkout_success_view", {
+                checkout_mode: commerce.checkoutIsLive() ? "live" : "test",
+                has_reference: Boolean(checkoutReference),
+                reference_type: sessionId
+                    ? "session"
+                    : paymentIntentId
+                        ? "payment_intent"
+                        : paymentLinkId
+                            ? "payment_link"
+                            : ""
+            });
+            if (checkoutReference) {
+                referenceValue.textContent = checkoutReference;
+                referencePanel.hidden = false;
+            }
+
+            supportLink.href = commerce.createSupportMailto(
+                commerce.config.supportSubject,
+                checkoutReference
+                    ? `Hi Denali Tech,\n\nI need help with a DTNT order.\nReference: ${checkoutReference}\n\nThanks.`
+                    : "Hi Denali Tech,\n\nI need help with a DTNT order.\n\nThanks.");
+
+            if (!commerce.checkoutIsLive()) {
+                statusEyebrow.textContent = "Checkout test complete";
+                successTitle.textContent = "DTNT checkout return is working.";
+                leadCopy.textContent = "This page confirms Stripe can send the buyer back to the website after payment.";
+                stepOneTitle.textContent = "Keep this page for the checkout test.";
+                stepOneCopy.textContent = "Use it to verify the route, page copy, and support links before taking real payments.";
+                stepTwoTitle.textContent = "No live customer delivery happens in test mode.";
+                stepTwoCopy.textContent = "Use the test purchase to verify the website return path, not to promise fulfillment.";
+                downloadsTitle.textContent = "Use this page to test the post-checkout handoff.";
+                downloadsCopy.textContent = "The buttons below should prove the buyer has a next step even if Stripe stays on its own confirmation screen.";
+                buildCopy.textContent = "Current test build:";
+                hashCopy.hidden = true;
+                supportTitle.textContent = "Still testing?";
+                supportCopy.innerHTML = `If the Stripe test finishes but the page still feels wrong, send the checkout link and what you saw to <a data-dtnt-support-email href="mailto:${commerce.config.supportEmail}">${commerce.config.supportEmail}</a>.`;
+                commerce.hydrateSupportEmail(document);
+            }
+
+            const sleep = ms => new Promise(resolve => window.setTimeout(resolve, ms));
+            let activationObjectUrl = null;
+
+            function releaseActivationObjectUrl() {
+                if (activationObjectUrl) {
+                    URL.revokeObjectURL(activationObjectUrl);
+                    activationObjectUrl = null;
+                }
+            }
+
+            function trackPurchaseOnce(reference, payload = null) {
+                if (purchaseTracked || !reference) {
+                    return;
+                }
+
+                const purchaseValue = typeof payload?.amountTotal === "number"
+                    ? payload.amountTotal
+                    : commerce.config.launchPriceAmountUsd;
+                const purchaseCurrency = typeof payload?.currency === "string" && payload.currency.trim()
+                    ? payload.currency.trim().toUpperCase()
+                    : "USD";
+
+                commerce.trackEvent("purchase", {
+                    transaction_id: reference,
+                    currency: purchaseCurrency,
+                    value: purchaseValue,
+                    items: [
+                        {
+                            item_id: "dtnt-pro",
+                            item_name: "DTNT Pro Launch",
+                            price: purchaseValue,
+                            quantity: 1
+                        }
+                    ],
+                    checkout_mode: commerce.checkoutIsLive() ? "live" : "test"
+                });
+
+                purchaseTracked = true;
+            }
+
+            async function wireActivationDownload(downloadUrl, reference) {
+                const safeReference = (reference || "dtnt-pro")
+                    .replace(/[^a-z0-9_-]/gi, "-")
+                    .replace(/-+/g, "-")
+                    .replace(/^-|-$/g, "")
+                    || "dtnt-pro";
+                const fileName = `DTNT-Pro-Activation-${safeReference}.json`;
+
+                releaseActivationObjectUrl();
+                activationDownload.download = fileName;
+
+                try {
+                    const response = await fetch(downloadUrl, { cache: "no-store" });
+                    if (!response.ok) {
+                        throw new Error("Activation download was not ready.");
+                    }
+
+                    const blob = await response.blob();
+                    activationObjectUrl = URL.createObjectURL(blob);
+                    activationDownload.href = activationObjectUrl;
+                } catch {
+                    activationDownload.href = downloadUrl;
+                }
+            }
+
+            async function hydrateLiveFulfillment() {
+                if (!checkoutReference || !commerce.fulfillmentStatusIsConfigured()) {
+                    return;
+                }
+
+                const statusUrl = commerce.resolveOrderStatusUrl(checkoutReference);
+
+                deliveryPanel.hidden = false;
+                deliveryTitle.textContent = "Checking your DTNT Pro delivery.";
+                deliveryCopy.textContent = "Stay on this page while the activation email is prepared. This page will keep checking until your delivery is ready.";
+
+                for (let attempt = 0; attempt < 20; attempt += 1) {
+                    try {
+                        const response = await fetch(statusUrl, { cache: "no-store" });
+                        const payload = response.ok ? await response.json() : null;
+
+                        if (response.ok && payload.status === "fulfilled") {
+                            trackPurchaseOnce(checkoutReference, payload);
+                            statusEyebrow.textContent = "Delivery ready";
+                            successTitle.textContent = "DTNT Pro is ready.";
+                            leadCopy.textContent = "Your payment is matched and the DTNT Pro delivery is ready.";
+                            stepOneTitle.textContent = "Install or open DTNT.";
+                            stepOneCopy.textContent = "If DTNT is already installed from Microsoft Store, skip straight to Profiles.";
+                            stepTwoTitle.textContent = "Check the delivery email for the activation code.";
+                            stepTwoCopy.textContent = "Use the purchase email plus activation code inside Profiles. The backup file stays here only if support asks you to use it.";
+                            downloadsTitle.textContent = "Finish with install and activation.";
+                            downloadsCopy.textContent = "Use Microsoft Store or the current Windows build if you still need the app, then choose Activate Pro inside Profiles and enter the purchase email plus activation code.";
+                            deliveryTitle.textContent = "Your DTNT Pro delivery is ready.";
+                            deliveryCopy.textContent = `Licensed to ${payload.licensedTo}. Check the delivery email for the activation code, then activate inside Profiles. The backup file is here only for support cases.`;
+                            await wireActivationDownload(payload.activationUrl, checkoutReference);
+                            activationDownload.hidden = false;
+                            return;
+                        }
+
+                        if (response.status === 404 || (response.ok && payload.status === "pending")) {
+                            deliveryTitle.textContent = "Finishing your DTNT Pro delivery.";
+                            deliveryCopy.textContent = "Payment is seen, and the activation email is still being prepared. This page will keep checking for a few minutes while delivery finishes.";
+                            await sleep(15000);
+                            continue;
+                        }
+
+                        break;
+                    } catch {
+                        await sleep(15000);
+                    }
+                }
+
+                deliveryPanel.hidden = false;
+                deliveryTitle.textContent = "Payment went through, but delivery still needs a minute.";
+                deliveryCopy.innerHTML = `Keep this page open and check again shortly. If the activation email still has not appeared, contact <a data-dtnt-support-email href="mailto:${commerce.config.supportEmail}">${commerce.config.supportEmail}</a> with your checkout reference so Denali Tech can finish the order quickly.`;
+                commerce.hydrateSupportEmail(document);
+            }
+
+            if (commerce.checkoutIsLive()) {
+                await hydrateLiveFulfillment();
+            }
+        })();
+    </script>
+</body>
+</html>
