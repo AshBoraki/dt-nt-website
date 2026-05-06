@@ -57,6 +57,20 @@
         sendGaEvent(eventName, payload);
     }
 
+    function sendPageView() {
+        const pageView = {
+            page_title: document.title,
+            page_location: window.location.href,
+            page_path: window.location.pathname
+        };
+
+        window.dataLayer.push({
+            event: "page_view",
+            ...pageView
+        });
+        sendGaEvent("page_view", pageView);
+    }
+
     function loadGtm() {
         if (gtmLoaded || !containerId) {
             return;
@@ -117,6 +131,7 @@
             }, { once: true, passive: true });
         });
 
+        sendPageView();
         push("dtnt_page_view");
     }
 
@@ -127,6 +142,7 @@
         gaMeasurementId,
         loadGtm,
         loadGtag,
+        sendPageView,
         push
     };
 })();
