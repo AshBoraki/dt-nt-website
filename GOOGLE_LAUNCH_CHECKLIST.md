@@ -22,30 +22,43 @@
 
 ## Search Console
 
-Add a domain or URL-prefix property for `dt-nt.com`, then submit:
+Search Console status:
+
+- URL-prefix property verified: `https://dt-nt.com/`
+- Verification file: `https://dt-nt.com/google8af56b1000558121.html`
+- Sitemap submitted: `https://dt-nt.com/sitemap.xml`
+- Homepage indexing requested: `https://dt-nt.com/`
+
+Domain property can still be added later for full `dt-nt.com` coverage across all protocols and subdomains.
+
+Submit:
 
 ```text
 https://dt-nt.com/sitemap.xml
 ```
 
-Preferred verification method:
+Preferred domain verification method:
 
 ```text
 DNS TXT record at Porkbun
 ```
 
-Fallback verification methods:
+Completed fallback verification method:
 
 ```text
 HTML file upload
+```
+
+Other fallback verification methods:
+
+```text
 HTML meta tag in index.html
 Google Analytics verification using G-K5VZ64YF7Q
 ```
 
 ## Checks After Google Verification
 
-- Confirm Google Search Console sees the sitemap.
-- Inspect `https://dt-nt.com/`.
-- Request indexing for the home page after HTTPS is trusted.
+- Confirm Google Search Console finishes processing the sitemap.
+- Re-check `https://dt-nt.com/` after Google crawls it.
 - Link Search Console to the GA4 property.
 - Mark Microsoft Store outbound clicks as a key event if you want install-button reporting.
