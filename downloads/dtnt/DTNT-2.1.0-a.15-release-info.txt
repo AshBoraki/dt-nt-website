@@ -4,17 +4,17 @@ Version: 2.1.0-a.15
 InformationalVersion: 2.1.0-a.15
 ReleaseChannel: Store
 RuntimeIdentifier: win-x64
-PublishedAt: Pending Microsoft Store publication
+PublishedAt: 2026-05-07T22:39:28-05:00
 InstallStyle: Microsoft Store
 StoreProductId: 9PFKHZ8M32HJ
 StoreUrl: https://apps.microsoft.com/detail/9PFKHZ8M32HJ
 
 Release notes:
-- Submitted to Microsoft Store as the next DTNT Windows update.
+- Published through Microsoft Store as the current DTNT Windows update.
 - Adds the refined light and dark theme system across the desktop shell.
 - Cleans up Channel Analyzer and Speed Test theme handling so light mode stays light and dark mode stays consistent.
 - Keeps IP Scanner focused on field work with selected-device TCP port checks for common service ports and one custom port.
 - Keeps Microsoft Store as the recommended public install path.
 
 Publication note:
-- This release-info file is prepared for the next Store approval. The public latest manifest should remain on the current approved build until Microsoft publishes this package.
+- This is the current public Microsoft Store build for DTNT.
