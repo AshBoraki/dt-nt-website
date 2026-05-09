@@ -12,7 +12,7 @@
         cancelUrl: "/cancel/",
         pricingUrl: "/#pricing",
         activationUrl: "/#activation",
-        supportEmail: "Hello@denalitechs.com",
+        supportEmail: "support@dt-nt.com",
         supportSubject: "DTNT order help",
         launchPriceLabel: "$59 one time",
         launchPriceAmountUsd: 59,
