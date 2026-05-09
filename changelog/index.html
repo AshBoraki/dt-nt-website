@@ -42,5 +42,13 @@
     </main>
     <footer class="footer"><div class="wrap footer-inner"><span>DTNT by Denali Tech Inc</span><div class="footer-links"><a href="/legal/#privacy">Privacy</a><a href="/legal/#terms">Terms</a><a href="/legal/#refund">Refunds</a><a href="/">Overview</a></div></div></footer>
     <script src="/commerce.js"></script>
+    <script>
+        (async () => {
+            const commerce = window.DTNTCommerce;
+            if (commerce) {
+                await commerce.hydrateLatestRelease(document);
+            }
+        })();
+    </script>
 </body>
 </html>

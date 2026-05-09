@@ -108,12 +108,13 @@ h3 { font-size: 1.18rem; line-height: 1.18; }
 }
 @media (max-width: 720px) {
     .wrap { width: min(100% - 24px, 1180px); }
-    h1 { font-size: clamp(2rem, 9.4vw, 3rem); }
+    h1 { font-size: clamp(1.85rem, 8.2vw, 2.65rem); line-height: 1.06; }
     h2 { font-size: clamp(1.5rem, 7vw, 2rem); }
-    .topbar-inner { min-height: 62px; padding: 0.75rem 0; align-items: center; }
+    .topbar-inner { min-height: 62px; padding: 0.75rem 0; align-items: flex-start; flex-direction: column; gap: 0.65rem; }
     .brand img { width: 36px; height: 36px; }
     .brand-copy strong { font-size: 0.92rem; }
-    .brand-copy span { font-size: 0.8rem; }
-    .nav { justify-content: flex-start; }
+    .brand-copy span { font-size: 0.8rem; white-space: normal; }
+    .nav { width: 100%; justify-content: flex-start; gap: 0.45rem; padding-top: 0.6rem; border-top: 1px solid var(--line); }
+    .nav a { padding: 0.34rem 0.48rem; border-radius: 8px; background: rgba(255, 255, 255, 0.56); font-size: 0.84rem; }
     .actions .button { width: 100%; }
 }

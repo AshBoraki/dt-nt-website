@@ -124,25 +124,25 @@
         const installNote = storeAvailable
             ? "Microsoft Store install is live and is the recommended path for the approved Windows build."
             : installerPublicReady
-                ? "Signed Windows install is ready. Portable ZIP stays available as the backup download."
+                ? "Signed Windows install is ready. Backup install support remains available when Store access is blocked."
                 : storeInCertification
-                ? "Microsoft Store release is in certification. Portable ZIP is live now while the signed installer path is being finished."
+                ? "Microsoft Store release is in certification. Backup install support remains available while the Store path is being finished."
                 : storePreparing
-                ? "Portable ZIP is live now. Microsoft Store and the signed Windows installer are still being prepared."
+                ? "Backup install support is available while Microsoft Store and the signed Windows installer path are being prepared."
                 : installerAvailable
-                ? "Portable ZIP is the cleanest download right now while the signed Windows installer path is being tightened up."
+                ? "Backup install support is available while the signed Windows installer path is being tightened up."
                 : "Start free. Go Pro when you need saved results, exports, and activation.";
         const installDetail = storeAvailable
             ? "Microsoft Store install recommended"
             : installerPublicReady
                 ? "Signed Windows install available"
                 : storeInCertification
-                ? "Portable ZIP live now; Store review in progress"
+                ? "Backup path available; Store review in progress"
                 : storePreparing
-                ? "Portable ZIP live now; Store path preparing"
+                ? "Backup path available; Store path preparing"
                 : installerAvailable
-                ? "Portable ZIP live now; signed install next"
-                : "Portable ZIP available now";
+                ? "Backup path available; signed install next"
+                : "Backup install support available";
         const storeStatus = storeAvailable
             ? "Live"
             : storeInCertification
