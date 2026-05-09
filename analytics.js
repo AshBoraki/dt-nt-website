@@ -12,6 +12,83 @@
     let gtmLoaded = false;
     let gtagLoaded = false;
     const pendingGaEvents = [];
+    const attributionStorageKey = "dtnt_attribution";
+    const attributionTtlMs = 1000 * 60 * 60 * 24 * 30;
+
+    function readStoredAttribution() {
+        try {
+            const raw = window.localStorage.getItem(attributionStorageKey);
+            if (!raw) {
+                return {};
+            }
+
+            const parsed = JSON.parse(raw);
+            if (!parsed || typeof parsed !== "object") {
+                return {};
+            }
+
+            if (typeof parsed.captured_at === "number" && Date.now() - parsed.captured_at > attributionTtlMs) {
+                window.localStorage.removeItem(attributionStorageKey);
+                return {};
+            }
+
+            return parsed;
+        } catch {
+            return {};
+        }
+    }
+
+    function collectUrlAttribution() {
+        const params = new URLSearchParams(window.location.search);
+        const keys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+        const values = {};
+
+        keys.forEach(key => {
+            const value = params.get(key);
+            if (value) {
+                values[key] = value.slice(0, 160);
+            }
+        });
+
+        const referrer = document.referrer || "";
+        if (referrer) {
+            values.referrer = referrer.slice(0, 300);
+        }
+
+        if (Object.keys(values).length === 0) {
+            return {};
+        }
+
+        const attribution = {
+            ...values,
+            landing_page: window.location.href,
+            captured_at: Date.now()
+        };
+
+        try {
+            window.localStorage.setItem(attributionStorageKey, JSON.stringify(attribution));
+        } catch {
+            // Ignore storage failures. Analytics should never block the page.
+        }
+
+        return attribution;
+    }
+
+    const attribution = {
+        ...readStoredAttribution(),
+        ...collectUrlAttribution()
+    };
+
+    function attributionPayload() {
+        const payload = {};
+        ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "referrer", "landing_page"].forEach(key => {
+            if (attribution[key]) {
+                payload[key] = attribution[key];
+            }
+        });
+
+        return payload;
+    }
 
     function initGtag() {
         window.gtag = window.gtag || function gtag() {
@@ -50,6 +127,7 @@
             event: eventName,
             page_path: window.location.pathname,
             page_title: document.title,
+            ...attributionPayload(),
             ...detail
         };
 
@@ -61,7 +139,8 @@
         const pageView = {
             page_title: document.title,
             page_location: window.location.href,
-            page_path: window.location.pathname
+            page_path: window.location.pathname,
+            ...attributionPayload()
         };
 
         window.dataLayer.push({
