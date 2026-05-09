@@ -417,7 +417,7 @@
             await commerce.hydrateLatestRelease(document);
 
             if (!commerce.checkoutIsConfigured()) {
-                statusCopy.textContent = "Secure checkout is not connected yet. Free download stays available while the Stripe link is added.";
+                statusCopy.textContent = "Secure checkout is not connected yet. Free Microsoft Store install stays available while the Stripe link is added.";
                 launchNote.textContent = "Keep every Pro button pointed at /buy/ so the paid path stays in one place.";
                 recoveryCopy.textContent = "Before live charges, keep the success and cancel pages ready so buyers always have a clear way forward.";
                 returnNote.textContent = "Live checkout should return to /success/ after payment and keep /cancel/ available as the fallback page.";
