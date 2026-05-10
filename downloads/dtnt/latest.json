@@ -1,10 +1,10 @@
 {
   "product": "DTNT",
   "channel": "store",
-  "version": "2.1.0-a.19",
-  "displayVersion": "2.1.0-a.19",
+  "version": "2.1.0-a.23",
+  "displayVersion": "2.1.0-a.23",
   "publishedAt": "2026-05-10T00:00:00-05:00",
-  "releaseNotesUrl": "https://dt-nt.com/downloads/dtnt/DTNT-2.1.0-a.19-release-info.txt",
+  "releaseNotesUrl": "https://dt-nt.com/downloads/dtnt/DTNT-2.1.0-a.23-release-info.txt",
   "store": {
     "available": true,
     "productId": "9PFKHZ8M32HJ",

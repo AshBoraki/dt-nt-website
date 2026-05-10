@@ -1,0 +1,19 @@
+Product: Denali Tech Net-Tools
+Company: Denali Tech Inc
+Version: 2.1.0-a.23
+InformationalVersion: 2.1.0-a.23
+ReleaseChannel: Store
+RuntimeIdentifier: win-x64
+PublishedAt: 2026-05-10T00:00:00-05:00
+InstallStyle: Microsoft Store
+StoreProductId: 9PFKHZ8M32HJ
+StoreUrl: https://apps.microsoft.com/detail/9PFKHZ8M32HJ
+
+Release notes:
+- Published through Microsoft Store as the current DTNT Windows update.
+- Keeps IP Scanner workflows clear for remembered hosts, labels, filtering, web indicators, and Copy IP.
+- Keeps Pro focused on best-channel guidance, selected-host follow-up, port checks, exports, saved-key actions, continuous ping, and trace route.
+- Aligns Store listing, website metadata, support, and legal references around dt-nt.com.
+
+Publication note:
+- This is the current public Microsoft Store build for DTNT.
