@@ -30,9 +30,9 @@ This page is built for cold LinkedIn traffic and says the job clearly:
 - Wi-Fi analysis
 - IP scanning
 - web targets
-- selected-host port checks
-- speed tests
-- saved results
+- IP scanning, remembered hosts, labels, filters, and Copy IP
+- speed tests and saved in-app speed history
+- Pro selected-host port checks and exports
 - Microsoft Store install
 - $59 launch Pro
 
@@ -119,9 +119,9 @@ Use this as the boosted post or the first comment copy:
 ```text
 For AV, low-voltage, and smart-home techs who troubleshoot networks on-site.
 
-DTNT is a Windows field tool for Wi-Fi checks, IP scanning, web-target discovery, selected-host port checks, speed tests, and saved results.
+DTNT is a Windows field tool for Wi-Fi checks, IP scanning, Copy IP, speed tests, saved profile review, and Pro follow-up tools for ports, exports, and deeper diagnostics.
 
-Install free from Microsoft Store. Go Pro when saved results and exports matter.
+Install free from Microsoft Store. Go Pro when recommendations, selected-host follow-up, exports, and saved-key tools matter.
 
 Field-tech page:
 https://dt-nt.com/field-tech/?utm_source=linkedin&utm_medium=paid_social&utm_campaign=field_tech_launch&utm_content=boost_post
@@ -155,7 +155,7 @@ If they respond with a real pain:
 That is exactly the kind of workflow I am trying to tighten. If you want to try DTNT, here is the field-tech page:
 https://dt-nt.com/field-tech/
 
-Free install is on Microsoft Store, and Pro is there only if saved results/exports are useful for your work.
+Free install is on Microsoft Store, and Pro is there only if recommendations, selected-host follow-up, exports, or saved-key tools are useful for your work.
 ```
 
 ## Kill rules
@@ -187,4 +187,3 @@ Campaign fields now captured:
 - `utm_term`
 - `landing_page`
 - `referrer`
-

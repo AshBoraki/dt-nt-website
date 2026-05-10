@@ -131,7 +131,7 @@
                 ? "Backup install support is available while Microsoft Store and the signed Windows installer path are being prepared."
                 : installerAvailable
                 ? "Backup install support is available while the signed Windows installer path is being tightened up."
-                : "Start free. Go Pro when you need saved results, exports, and activation.";
+                : "Start free. Go Pro when you need recommendations, follow-up actions, exports, and activation.";
         const installDetail = storeAvailable
             ? "Microsoft Store install recommended"
             : installerPublicReady
