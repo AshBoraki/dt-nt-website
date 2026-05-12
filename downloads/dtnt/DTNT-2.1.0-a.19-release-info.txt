@@ -1,20 +1,15 @@
+DTNT Release Notes
+
+Public version: 2.1.0
 Product: Denali Tech Net-Tools
-Company: Denali Tech Inc
-Version: 2.1.0-a.19
-InformationalVersion: 2.1.0-a.19
-ReleaseChannel: Store
-RuntimeIdentifier: win-x64
-PublishedAt: 2026-05-10T00:00:00-05:00
-InstallStyle: Microsoft Store
-StoreProductId: 9PFKHZ8M32HJ
-StoreUrl: https://apps.microsoft.com/detail/9PFKHZ8M32HJ
+Install path: Microsoft Store
+Support: support@dt-nt.com
 
-Release notes:
-- Published through Microsoft Store as the current DTNT Windows update.
-- Aligns DTNT's in-app update feed and release links with the standalone product domain at dt-nt.com.
-- Keeps Microsoft Store as the recommended public install path.
-- Keeps Pro activation focused on purchase email plus activation code, with the fallback activation file reserved for support cases.
-- Aligns DTNT support and policy references around support@dt-nt.com.
+What's improved:
+- DTNT install and support links were aligned around the public product domain.
+- The Windows app kept its Microsoft Store-first install path.
+- Pro activation language was tightened around purchase email and activation code.
+- Public product pages were kept in sync with the app's current feature set.
 
-Publication note:
-- This is the current public Microsoft Store build for DTNT.
+See the current public release notes:
+https://dt-nt.com/changelog/

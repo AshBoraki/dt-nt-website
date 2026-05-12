@@ -1,20 +1,15 @@
+DTNT Release Notes
+
+Public version: 2.1.0
 Product: Denali Tech Net-Tools
-Company: Denali Tech Inc
-Version: 2.1.0-a.15
-InformationalVersion: 2.1.0-a.15
-ReleaseChannel: Store
-RuntimeIdentifier: win-x64
-PublishedAt: 2026-05-07T22:39:28-05:00
-InstallStyle: Microsoft Store
-StoreProductId: 9PFKHZ8M32HJ
-StoreUrl: https://apps.microsoft.com/detail/9PFKHZ8M32HJ
+Install path: Microsoft Store
+Support: support@dt-nt.com
 
-Release notes:
-- Published through Microsoft Store as the current DTNT Windows update.
-- Adds the refined light and dark theme system across the desktop shell.
-- Cleans up Channel Analyzer and Speed Test theme handling so light mode stays light and dark mode stays consistent.
-- Keeps IP Scanner focused on field work with selected-device TCP port checks for common service ports and one custom port.
-- Keeps Microsoft Store as the recommended public install path.
+What's improved:
+- Light and Dark theme handling was refined across the app.
+- Channel Analyzer and Speed Test views were cleaned up for better readability.
+- IP Scanner kept selected-device port checks for common field ports and one custom port.
+- Free and Pro feature language was clarified across the product site.
 
-Publication note:
-- This is the current public Microsoft Store build for DTNT.
+See the current public release notes:
+https://dt-nt.com/changelog/

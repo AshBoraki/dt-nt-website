@@ -404,7 +404,7 @@
                         <a class="button button-secondary" data-dtnt-download="free" href="/" hidden>Open backup install path</a>
                         <a class="button button-secondary" data-dtnt-release-notes href="/" hidden>Release Info</a>
                     </div>
-                    <p id="build-copy">Current build: <strong data-dtnt-version>latest</strong></p>
+                    <p id="build-copy">Current version: <strong data-dtnt-version>latest</strong></p>
                     <details class="advanced-details" id="hash-copy" data-dtnt-hash-details hidden>
                         <summary>Verify download hash</summary>
                         <p>SHA-256: <span data-dtnt-sha256>loading</span></p>
@@ -501,7 +501,7 @@
                 stepTwoCopy.textContent = "Use the test purchase to verify the website return path, not to promise fulfillment.";
                 downloadsTitle.textContent = "Use this page to test the post-checkout handoff.";
                 downloadsCopy.textContent = "The buttons below should prove the buyer has a next step even if Stripe stays on its own confirmation screen.";
-                buildCopy.textContent = "Current test build:";
+                buildCopy.textContent = "Current test version:";
                 hashCopy.hidden = true;
                 supportTitle.textContent = "Still testing?";
                 supportCopy.innerHTML = `If the Stripe test finishes but the page still feels wrong, send the checkout link and what you saw to <a data-dtnt-support-email href="mailto:${commerce.config.supportEmail}">${commerce.config.supportEmail}</a>.`;
@@ -599,7 +599,7 @@
                             stepTwoTitle.textContent = "Check the delivery email for the activation code.";
                             stepTwoCopy.textContent = "Use the purchase email plus activation code inside Profiles. The backup file stays here only if support asks you to use it.";
                             downloadsTitle.textContent = "Finish with install and activation.";
-                            downloadsCopy.textContent = "Use Microsoft Store or the current Windows build if you still need the app, then choose Activate Pro inside Profiles and enter the purchase email plus activation code.";
+                            downloadsCopy.textContent = "Use Microsoft Store if you still need the app, then choose Activate Pro inside Profiles and enter the purchase email plus activation code.";
                             deliveryTitle.textContent = "Your DTNT Pro delivery is ready.";
                             deliveryCopy.textContent = `Licensed to ${payload.licensedTo}. Check the delivery email for the activation code, then activate inside Profiles. The backup file is here only for support cases.`;
                             await wireActivationDownload(payload.activationUrl, checkoutReference);
