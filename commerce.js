@@ -122,11 +122,11 @@
                 ? "installer"
                 : "portable";
         const installNote = storeAvailable
-            ? "Microsoft Store install is live and is the recommended path for the approved Windows build."
+            ? "Microsoft Store install is live and is the recommended path for the Windows app."
             : installerPublicReady
                 ? "Signed Windows install is ready. Backup install support remains available when Store access is blocked."
                 : storeInCertification
-                ? "Microsoft Store release is in certification. Backup install support remains available while the Store path is being finished."
+                ? "Microsoft Store update is being prepared. Backup install support remains available while the Store path is being finished."
                 : storePreparing
                 ? "Backup install support is available while Microsoft Store and the signed Windows installer path are being prepared."
                 : installerAvailable
@@ -146,7 +146,7 @@
         const storeStatus = storeAvailable
             ? "Live"
             : storeInCertification
-                ? "In certification"
+                    ? "Preparing"
                 : storePreparing
                     ? "Preparing"
                     : "Not live yet";
