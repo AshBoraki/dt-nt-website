@@ -15,6 +15,19 @@
     const attributionStorageKey = "dtnt_attribution";
     const attributionTtlMs = 1000 * 60 * 60 * 24 * 30;
 
+    function safeUrl(value) {
+        try {
+            const url = new URL(value, window.location.origin);
+            return `${url.origin}${url.pathname}`;
+        } catch {
+            return "";
+        }
+    }
+
+    function safePageUrl() {
+        return safeUrl(window.location.href);
+    }
+
     function readStoredAttribution() {
         try {
             const raw = window.localStorage.getItem(attributionStorageKey);
@@ -50,7 +63,7 @@
             }
         });
 
-        const referrer = document.referrer || "";
+        const referrer = safeUrl(document.referrer || "");
         if (referrer) {
             values.referrer = referrer.slice(0, 300);
         }
@@ -61,7 +74,7 @@
 
         const attribution = {
             ...values,
-            landing_page: window.location.href,
+            landing_page: safePageUrl(),
             captured_at: Date.now()
         };
 
@@ -138,7 +151,7 @@
     function sendPageView() {
         const pageView = {
             page_title: document.title,
-            page_location: window.location.href,
+            page_location: safePageUrl(),
             page_path: window.location.pathname,
             ...attributionPayload()
         };

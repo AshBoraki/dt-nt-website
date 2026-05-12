@@ -8,7 +8,7 @@ Support: support@dt-nt.com
 What's improved:
 - Light and Dark theme handling was refined across the app.
 - Channel Analyzer and Speed Test views were cleaned up for better readability.
-- IP Scanner kept selected-device port checks for common field ports and one custom port.
+- IP Scanner kept Pro selected-device port checks for common field ports and one custom port.
 - Free and Pro feature language was clarified across the product site.
 
 See the current public release notes:

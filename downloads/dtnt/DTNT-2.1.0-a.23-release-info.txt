@@ -6,7 +6,7 @@ Install path: Microsoft Store
 Support: support@dt-nt.com
 
 What's improved:
-- Cleaner IP Scanner workflow with remembered devices, labels, filtering, web indicators, and Copy IP.
+- Cleaner IP Scanner workflow with remembered devices, labels, filtering, web indicators, Copy IP, and Pro selected-host port checks.
 - Free tools remain easy to try before Pro: Wi-Fi analysis, IP scanning, speed tests, saved profiles, and basic diagnostics.
 - Pro stays focused on deeper field actions: best-channel guidance, selected-host follow-up, port checks, Copy Name and MAC, exports, saved-key actions, continuous ping, and trace route.
 - Website, support, and activation references now point customers toward dt-nt.com and the Microsoft Store install path.

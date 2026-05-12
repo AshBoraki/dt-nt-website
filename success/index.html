@@ -358,9 +358,9 @@
     <main class="page">
         <div class="wrap">
             <section class="shell">
-                <div class="eyebrow" id="status-eyebrow">Payment received</div>
-                <h1 id="success-title">DTNT Pro purchase complete.</h1>
-                <p id="lead-copy">Stripe has finished the checkout. If DTNT is already installed, open it now. This page will finish the Pro delivery and activation steps.</p>
+                <div class="eyebrow" id="status-eyebrow">Activation handoff</div>
+                <h1 id="success-title">Finish your DTNT Pro activation.</h1>
+                <p id="lead-copy">If you just completed checkout, this page will use the Stripe return reference to check your DTNT Pro delivery. If DTNT is already installed, open it when activation is ready.</p>
 
                 <ul class="steps">
                     <li class="step">
@@ -373,22 +373,22 @@
                     <li class="step">
                         <span class="step-index">2</span>
                         <div>
-                            <strong id="step-two-title">Watch for the DTNT delivery email.</strong>
-                            <span id="step-two-copy">The paid path should deliver the activation email for this release with the purchase email reference and activation code you need in the app.</span>
+                            <strong id="step-two-title">Check for the DTNT activation details.</strong>
+                            <span id="step-two-copy">After payment, DTNT provides activation instructions here and may also send a delivery email with the purchase email reference and activation code.</span>
                         </div>
                     </li>
                     <li class="step">
                         <span class="step-index">3</span>
                         <div>
                             <strong id="step-three-title">Choose Activate Pro in Profiles.</strong>
-                            <span id="step-three-copy">Open DTNT, go to Profiles, choose Activate Pro, and enter the purchase email plus activation code from the delivery email.</span>
+                            <span id="step-three-copy">Open DTNT, go to Profiles, choose Activate Pro, and enter the purchase email plus activation code.</span>
                         </div>
                     </li>
                 </ul>
 
                 <div class="support">
                     <strong id="support-title">Need help with the order?</strong>
-                    <p id="support-copy">If the delivery email does not arrive or activation does not go through cleanly, contact <a data-dtnt-support-email href="mailto:support@dt-nt.com">support@dt-nt.com</a> and include the email address used at checkout.</p>
+                    <p id="support-copy">If activation does not go through cleanly, contact <a data-dtnt-support-email href="mailto:support@dt-nt.com">support@dt-nt.com</a> and include the email address used at checkout.</p>
                 </div>
 
                 <p>Policy details stay available here: <a href="/legal/#eula">EULA</a>, <a href="/legal/#terms">Terms</a>, <a href="/legal/#privacy">Privacy Notice</a>, and <a href="/legal/#refund">Refund Policy</a>.</p>
@@ -398,7 +398,6 @@
                     <p id="downloads-copy">If DTNT is already on this machine, open it and activate inside Profiles. If not, use the Microsoft Store path below and come right back.</p>
                     <div class="actions">
                         <a class="button button-primary" data-dtnt-download="preferred" data-dtnt-store-text="Get DTNT from Microsoft Store" data-dtnt-installer-text="Install DTNT for Windows" data-dtnt-fallback-text="Get DTNT for Windows" href="https://apps.microsoft.com/detail/9PFKHZ8M32HJ">Get DTNT from Microsoft Store</a>
-                        <a class="button button-primary" id="activation-download" href="/" hidden>Download backup activation file</a>
                         <a class="button button-primary" data-dtnt-download="appinstaller" href="/" hidden>Install DTNT</a>
                         <a class="button button-secondary" data-dtnt-download="msix" href="/" hidden>Download MSIX</a>
                         <a class="button button-secondary" data-dtnt-download="free" href="/" hidden>Open backup install path</a>
@@ -413,7 +412,7 @@
 
                 <div class="support" id="delivery-panel" hidden>
                     <strong id="delivery-title">Checking your DTNT Pro delivery.</strong>
-                    <p id="delivery-copy">Stay on this page while the activation email is prepared. The backup file is kept here only in case support asks you to use it.</p>
+                    <p id="delivery-copy">Stay on this page while the activation details are prepared. Contact support if activation needs manual help.</p>
                 </div>
 
                 <div class="reference" id="reference-panel" hidden>
@@ -456,7 +455,6 @@
             const downloadsCopy = document.getElementById("downloads-copy");
             const buildCopy = document.getElementById("build-copy");
             const hashCopy = document.getElementById("hash-copy");
-            const activationDownload = document.getElementById("activation-download");
             const deliveryPanel = document.getElementById("delivery-panel");
             const deliveryTitle = document.getElementById("delivery-title");
             const deliveryCopy = document.getElementById("delivery-copy");
@@ -464,32 +462,50 @@
             const referenceValue = document.getElementById("reference-value");
             const params = new URLSearchParams(window.location.search);
             const sessionId = params.get("session_id") || params.get("checkout_session_id");
-            const paymentIntentId = params.get("payment_intent");
-            const paymentLinkId = params.get("payment_link");
+            const unsupportedReference = params.get("payment_intent") || params.get("payment_link");
 
-            const checkoutReference = sessionId || paymentIntentId || paymentLinkId;
+            if (window.location.search && window.history?.replaceState) {
+                window.history.replaceState({}, document.title, `${window.location.pathname}${window.location.hash}`);
+            }
+
+            function maskedReference(reference) {
+                if (!reference) {
+                    return "";
+                }
+
+                return `Captured for support (...${reference.slice(-8)})`;
+            }
+
+            const checkoutReference = sessionId;
             let purchaseTracked = false;
             commerce.trackEvent("dtnt_checkout_success_view", {
                 checkout_mode: commerce.checkoutIsLive() ? "live" : "test",
                 has_reference: Boolean(checkoutReference),
-                reference_type: sessionId
-                    ? "session"
-                    : paymentIntentId
-                        ? "payment_intent"
-                        : paymentLinkId
-                            ? "payment_link"
-                            : ""
+                reference_type: sessionId ? "session" : unsupportedReference ? "unsupported" : ""
             });
             if (checkoutReference) {
-                referenceValue.textContent = checkoutReference;
+                referenceValue.textContent = maskedReference(checkoutReference);
                 referencePanel.hidden = false;
+            }
+
+            if (commerce.checkoutIsLive() && !checkoutReference) {
+                statusEyebrow.textContent = "Order reference needed";
+                successTitle.textContent = "We need a checkout reference to verify delivery.";
+                leadCopy.textContent = "If you completed payment, use the Stripe return link or the DTNT delivery email. If you landed here manually, contact support with the checkout email address.";
+                stepOneTitle.textContent = "Check your receipt or delivery email.";
+                stepOneCopy.textContent = "Stripe and DTNT email details are the fastest way to identify the order.";
+                stepTwoTitle.textContent = "Need help finding the order?";
+                stepTwoCopy.textContent = "Email support with the checkout email address and any receipt or reference you have.";
+                downloadsTitle.textContent = "Install DTNT while support checks the order.";
+                downloadsCopy.textContent = "You can still install the free app from Microsoft Store. Pro activation needs a valid purchase email and activation code.";
+                supportTitle.textContent = "Send the checkout email address.";
+                supportCopy.innerHTML = `Contact <a data-dtnt-support-email href="mailto:${commerce.config.supportEmail}">${commerce.config.supportEmail}</a> with the email used at checkout and any Stripe receipt reference.`;
+                commerce.hydrateSupportEmail(document);
             }
 
             supportLink.href = commerce.createSupportMailto(
                 commerce.config.supportSubject,
-                checkoutReference
-                    ? `Hi Denali Tech,\n\nI need help with a DTNT order.\nReference: ${checkoutReference}\n\nThanks.`
-                    : "Hi Denali Tech,\n\nI need help with a DTNT order.\n\nThanks.");
+                "Hi Denali Tech,\n\nI need help with a DTNT order. I can provide the checkout email address and receipt details if needed.\n\nThanks.");
 
             if (!commerce.checkoutIsLive()) {
                 statusEyebrow.textContent = "Checkout test complete";
@@ -509,15 +525,6 @@
             }
 
             const sleep = ms => new Promise(resolve => window.setTimeout(resolve, ms));
-            let activationObjectUrl = null;
-
-            function releaseActivationObjectUrl() {
-                if (activationObjectUrl) {
-                    URL.revokeObjectURL(activationObjectUrl);
-                    activationObjectUrl = null;
-                }
-            }
-
             function trackPurchaseOnce(reference, payload = null) {
                 if (purchaseTracked || !reference) {
                     return;
@@ -531,7 +538,6 @@
                     : "USD";
 
                 commerce.trackEvent("purchase", {
-                    transaction_id: reference,
                     currency: purchaseCurrency,
                     value: purchaseValue,
                     items: [
@@ -548,31 +554,6 @@
                 purchaseTracked = true;
             }
 
-            async function wireActivationDownload(downloadUrl, reference) {
-                const safeReference = (reference || "dtnt-pro")
-                    .replace(/[^a-z0-9_-]/gi, "-")
-                    .replace(/-+/g, "-")
-                    .replace(/^-|-$/g, "")
-                    || "dtnt-pro";
-                const fileName = `DTNT-Pro-Activation-${safeReference}.json`;
-
-                releaseActivationObjectUrl();
-                activationDownload.download = fileName;
-
-                try {
-                    const response = await fetch(downloadUrl, { cache: "no-store" });
-                    if (!response.ok) {
-                        throw new Error("Activation download was not ready.");
-                    }
-
-                    const blob = await response.blob();
-                    activationObjectUrl = URL.createObjectURL(blob);
-                    activationDownload.href = activationObjectUrl;
-                } catch {
-                    activationDownload.href = downloadUrl;
-                }
-            }
-
             async function hydrateLiveFulfillment() {
                 if (!checkoutReference || !commerce.fulfillmentStatusIsConfigured()) {
                     return;
@@ -582,7 +563,7 @@
 
                 deliveryPanel.hidden = false;
                 deliveryTitle.textContent = "Checking your DTNT Pro delivery.";
-                deliveryCopy.textContent = "Stay on this page while the activation email is prepared. This page will keep checking until your delivery is ready.";
+                deliveryCopy.textContent = "Stay on this page while the activation details are prepared. This page will keep checking until your delivery is ready.";
 
                 for (let attempt = 0; attempt < 20; attempt += 1) {
                     try {
@@ -596,20 +577,18 @@
                             leadCopy.textContent = "Your payment is matched and the DTNT Pro delivery is ready.";
                             stepOneTitle.textContent = "Install or open DTNT.";
                             stepOneCopy.textContent = "If DTNT is already installed from Microsoft Store, skip straight to Profiles.";
-                            stepTwoTitle.textContent = "Check the delivery email for the activation code.";
-                            stepTwoCopy.textContent = "Use the purchase email plus activation code inside Profiles. The backup file stays here only if support asks you to use it.";
+                            stepTwoTitle.textContent = "Check the activation code.";
+                            stepTwoCopy.textContent = "Use the purchase email plus activation code inside Profiles. Contact support if you need a backup activation method.";
                             downloadsTitle.textContent = "Finish with install and activation.";
                             downloadsCopy.textContent = "Use Microsoft Store if you still need the app, then choose Activate Pro inside Profiles and enter the purchase email plus activation code.";
                             deliveryTitle.textContent = "Your DTNT Pro delivery is ready.";
-                            deliveryCopy.textContent = `Licensed to ${payload.licensedTo}. Check the delivery email for the activation code, then activate inside Profiles. The backup file is here only for support cases.`;
-                            await wireActivationDownload(payload.activationUrl, checkoutReference);
-                            activationDownload.hidden = false;
+                            deliveryCopy.textContent = `Licensed to ${payload.licensedTo}. Check the delivery email for the activation code, then activate inside Profiles. Contact support if you need a backup activation method.`;
                             return;
                         }
 
                         if (response.status === 404 || (response.ok && payload.status === "pending")) {
                             deliveryTitle.textContent = "Finishing your DTNT Pro delivery.";
-                            deliveryCopy.textContent = "Payment is seen, and the activation email is still being prepared. This page will keep checking for a few minutes while delivery finishes.";
+                            deliveryCopy.textContent = "Payment is seen, and the activation details are still being prepared. This page will keep checking for a few minutes while delivery finishes.";
                             await sleep(15000);
                             continue;
                         }
@@ -622,7 +601,7 @@
 
                 deliveryPanel.hidden = false;
                 deliveryTitle.textContent = "Payment went through, but delivery still needs a minute.";
-                deliveryCopy.innerHTML = `Keep this page open and check again shortly. If the activation email still has not appeared, contact <a data-dtnt-support-email href="mailto:${commerce.config.supportEmail}">${commerce.config.supportEmail}</a> with your checkout reference so Denali Tech can finish the order quickly.`;
+                deliveryCopy.innerHTML = `Keep this page open and check again shortly. If activation details still have not appeared, contact <a data-dtnt-support-email href="mailto:${commerce.config.supportEmail}">${commerce.config.supportEmail}</a> with your checkout reference so Denali Tech can finish the order quickly.`;
                 commerce.hydrateSupportEmail(document);
             }
 

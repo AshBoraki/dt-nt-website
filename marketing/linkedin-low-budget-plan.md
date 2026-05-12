@@ -29,7 +29,7 @@ This page is built for cold LinkedIn traffic and says the job clearly:
 - AV, low-voltage, smart-home, and network techs
 - Wi-Fi analysis
 - IP scanning
-- web targets
+- likely local web interfaces
 - IP scanning, remembered hosts, labels, filters, and Copy IP
 - speed tests and saved in-app speed history
 - Pro selected-host port checks and exports
