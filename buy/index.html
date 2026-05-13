@@ -460,10 +460,10 @@
                 return;
             }
 
-            statusCopy.textContent = "This checkout is still in test mode. Use it to verify the Stripe path, success page, and Activate Pro steps before live charges.";
-            launchNote.textContent = "The live Stripe URL is configured in /commerce.js. Keep Stripe return URLs aligned with /success/ and /cancel/.";
-            recoveryCopy.textContent = "Use this page to test the fallback path too, in case Stripe leaves the buyer on its own confirmation page.";
-            returnNote.textContent = "Test checkout should still return to /success/ after payment. Use /cancel/ as the fallback path if checkout is closed before payment.";
+            statusCopy.textContent = "Checkout is temporarily unavailable. Please contact support and we can help with the Pro purchase path.";
+            launchNote.textContent = "DTNT Free is still available from Microsoft Store while purchase support is handled directly.";
+            recoveryCopy.textContent = "If you already paid and need help, contact support with the checkout email address and receipt details.";
+            returnNote.textContent = "If checkout closes before payment, no charge should be completed. Return here or contact support for help.";
         })();
     </script>
 </body>

@@ -508,16 +508,16 @@
                 "Hi Denali Tech,\n\nI need help with a DTNT order. I can provide the checkout email address and receipt details if needed.\n\nThanks.");
 
             if (!commerce.checkoutIsLive()) {
-                statusEyebrow.textContent = "Checkout test complete";
-                successTitle.textContent = "DTNT checkout return is working.";
-                leadCopy.textContent = "This page confirms Stripe can send the buyer back to the website after payment.";
-                stepOneTitle.textContent = "Keep this page for the checkout test.";
-                stepOneCopy.textContent = "Use it to verify the route, page copy, and support links before taking real payments.";
-                stepTwoTitle.textContent = "No live customer delivery happens in test mode.";
-                stepTwoCopy.textContent = "Use the test purchase to verify the website return path, not to promise fulfillment.";
-                downloadsTitle.textContent = "Use this page to test the post-checkout handoff.";
-                downloadsCopy.textContent = "The buttons below should prove the buyer has a next step even if Stripe stays on its own confirmation screen.";
-                buildCopy.textContent = "Current test version:";
+                statusEyebrow.textContent = "Activation support";
+                successTitle.textContent = "DTNT Pro activation needs support.";
+                leadCopy.textContent = "If you completed payment or reached this page from checkout, contact support so we can verify the order and help finish activation.";
+                stepOneTitle.textContent = "Keep your receipt details.";
+                stepOneCopy.textContent = "The checkout email address and receipt details help support find the order quickly.";
+                stepTwoTitle.textContent = "Install DTNT from Microsoft Store.";
+                stepTwoCopy.textContent = "You can still install and use DTNT Free while Pro activation is being checked.";
+                downloadsTitle.textContent = "Install DTNT while support checks the order.";
+                downloadsCopy.textContent = "Use Microsoft Store if you still need the app. Pro activation needs a valid purchase email and activation code.";
+                buildCopy.textContent = "Current version:";
                 hashCopy.hidden = true;
                 supportTitle.textContent = "Still testing?";
                 supportCopy.innerHTML = `If the Stripe test finishes but the page still feels wrong, send the checkout link and what you saw to <a data-dtnt-support-email href="mailto:${commerce.config.supportEmail}">${commerce.config.supportEmail}</a>.`;
