@@ -187,3 +187,40 @@ Campaign fields now captured:
 - `utm_term`
 - `landing_page`
 - `referrer`
+
+## Microsoft Ads setup - May 16, 2026
+
+Account: Denali Tech Inc `G107F8LW`
+
+Campaign budgets:
+
+- `dtnt store install search us 3 per day`: `$6.00/day`
+- `Denali Tech Local Leads Search`: `$5.00/day`
+- Total daily cap: `$11.00/day`, which is `$3.00/day` above the previous `$8.00/day` cap.
+
+DTNT search ad:
+
+- Final URL: `https://dt-nt.com`
+- Display path: `dtnt.com/dtnt/install`
+- Main headlines: `DTNT Network Tools`, `Wi-Fi Analyzer Windows`, `IP Scanner For Techs`
+- Main descriptions:
+  - `Wi-Fi analysis, IP scanning, speed tests, and diagnostics for field technicians.`
+  - `Install DTNT from Microsoft Store and use one Windows app for daily network checks.`
+- Editorial status after copy and URL update: pending review.
+
+Tracking:
+
+- Microsoft UET tag ID: `187251091`
+- UET status in Microsoft Ads: active
+- Conversion goal: `DTNT Store Click`
+- Goal type: event
+- Goal category: outbound click
+- Event action expected from the site: `dtnt_download_click`
+- Revenue: not assigned
+- Include in conversions: yes
+
+Do not enable Microsoft Clarity unless privacy copy and consent language are reviewed first. The current setup intentionally uses standard UET event tracking only.
+
+Known watch item:
+
+- Microsoft Ads shows a low prepay balance warning. Add funds before letting campaigns run for long, or the ads can stop even if campaign setup is correct.
