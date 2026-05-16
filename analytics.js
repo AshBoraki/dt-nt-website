@@ -6,11 +6,16 @@
     const gaMeasurementId = typeof config.gaMeasurementId === "string"
         ? config.gaMeasurementId.trim()
         : "";
+    const microsoftUetTagId = typeof config.microsoftUetTagId === "string"
+        ? config.microsoftUetTagId.trim()
+        : "";
 
     window.dataLayer = window.dataLayer || [];
+    window.uetq = window.uetq || [];
 
     let gtmLoaded = false;
     let gtagLoaded = false;
+    let microsoftUetLoaded = false;
     const pendingGaEvents = [];
     const attributionStorageKey = "dtnt_attribution";
     const attributionTtlMs = 1000 * 60 * 60 * 24 * 30;
@@ -135,6 +140,37 @@
         pendingGaEvents.push({ eventName, detail });
     }
 
+    function microsoftEventName(eventName) {
+        return String(eventName || "")
+            .trim()
+            .toLowerCase()
+            .replace(/[^a-z0-9_]+/g, "_")
+            .replace(/^_+|_+$/g, "")
+            .slice(0, 64) || "dtnt_event";
+    }
+
+    function sendMicrosoftUetEvent(eventName, detail = {}) {
+        if (!microsoftUetTagId) {
+            return;
+        }
+
+        const eventAction = microsoftEventName(eventName);
+        const value = Number(detail.value ?? detail.price ?? 0);
+        const revenueValue = Number.isFinite(value) && value > 0 ? value : undefined;
+        const currency = typeof detail.currency === "string" && detail.currency.trim()
+            ? detail.currency.trim().toUpperCase().slice(0, 3)
+            : undefined;
+
+        window.uetq = window.uetq || [];
+        window.uetq.push("event", eventAction, {
+            event_category: "DTNT",
+            event_label: String(detail.download_label || detail.buy_label || detail.checkout_mode || eventName || "").slice(0, 120),
+            revenue_value: revenueValue,
+            currency,
+            page_path: window.location.pathname
+        });
+    }
+
     function push(eventName, detail = {}) {
         const payload = {
             event: eventName,
@@ -146,6 +182,7 @@
 
         window.dataLayer.push(payload);
         sendGaEvent(eventName, payload);
+        sendMicrosoftUetEvent(eventName, payload);
     }
 
     function sendPageView() {
@@ -161,6 +198,22 @@
             ...pageView
         });
         sendGaEvent("page_view", pageView);
+    }
+
+    function loadMicrosoftUet() {
+        if (microsoftUetLoaded || !microsoftUetTagId) {
+            return;
+        }
+
+        microsoftUetLoaded = true;
+        window.uetq = window.uetq || [];
+        window.uetq.push("set", { ti: microsoftUetTagId });
+
+        const firstScript = document.getElementsByTagName("script")[0];
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = "https://bat.bing.com/bat.js";
+        firstScript.parentNode.insertBefore(script, firstScript);
     }
 
     function loadGtm() {
@@ -200,6 +253,7 @@
                 window.requestIdleCallback(() => {
                     loadGtm();
                     loadGtag();
+                    loadMicrosoftUet();
                 }, { timeout: 2500 });
                 return;
             }
@@ -207,6 +261,7 @@
             window.setTimeout(() => {
                 loadGtm();
                 loadGtag();
+                loadMicrosoftUet();
             }, 1500);
         };
 
@@ -220,9 +275,11 @@
             document.addEventListener(eventName, () => {
                 loadGtm();
                 loadGtag();
+                loadMicrosoftUet();
             }, { once: true, passive: true });
         });
 
+        loadMicrosoftUet();
         sendPageView();
         push("dtnt_page_view");
     }
@@ -232,8 +289,10 @@
     window.DTNTAnalytics = {
         containerId,
         gaMeasurementId,
+        microsoftUetTagId,
         loadGtm,
         loadGtag,
+        loadMicrosoftUet,
         sendPageView,
         push
     };
