@@ -476,6 +476,15 @@
                 return `Captured for support (...${reference.slice(-8)})`;
             }
 
+            function escapeHtml(value) {
+                return String(value || "")
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#39;");
+            }
+
             const checkoutReference = sessionId;
             let purchaseTracked = false;
             commerce.trackEvent("dtnt_checkout_success_view", {
@@ -582,7 +591,11 @@
                             downloadsTitle.textContent = "Finish with install and activation.";
                             downloadsCopy.textContent = "Use Microsoft Store if you still need the app, then choose Activate Pro inside Profiles and enter the purchase email plus activation code.";
                             deliveryTitle.textContent = "Your DTNT Pro delivery is ready.";
-                            deliveryCopy.textContent = `Licensed to ${payload.licensedTo}. Check the delivery email for the activation code, then activate inside Profiles. Contact support if you need a backup activation method.`;
+                            if (payload.purchaseEmail && payload.activationCode) {
+                                deliveryCopy.innerHTML = `Licensed to ${escapeHtml(payload.licensedTo)}. Activate inside Profiles with purchase email <strong>${escapeHtml(payload.purchaseEmail)}</strong> and activation code <strong>${escapeHtml(payload.activationCode)}</strong>. Keep your Stripe receipt for support.`;
+                            } else {
+                                deliveryCopy.textContent = `Licensed to ${payload.licensedTo}. Check the delivery email for the activation code, then activate inside Profiles. Contact support if you need a backup activation method.`;
+                            }
                             return;
                         }
 

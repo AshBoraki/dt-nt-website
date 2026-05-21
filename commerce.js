@@ -4,7 +4,7 @@
         checkoutMode: "live",
         autoRedirectWhenLive: false,
         latestManifestUrl: "/downloads/dtnt/latest.json",
-        fulfillmentApiBaseUrl: "https://dtnt-fulfillment-a07d.azurewebsites.net",
+        fulfillmentApiBaseUrl: "https://dtnt-fulfillment.denali-dtnt.workers.dev",
         orderStatusBasePath: "",
         homeUrl: "/",
         buyUrl: "/buy/",

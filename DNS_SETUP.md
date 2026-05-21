@@ -21,3 +21,18 @@ Remove the current Porkbun parking records:
 | `www` | CNAME | `uixie.porkbun.com` |
 
 After DNS resolves to GitHub Pages, enable HTTPS enforcement in the GitHub Pages settings.
+
+## Email DNS
+
+`dt-nt.com` is also configured for Google Workspace mail. Keep the support address aligned with `EMAIL_SYSTEM.md`.
+
+Observed mail records on 2026-05-18:
+
+| Host | Type | Answer |
+| --- | --- | --- |
+| `@` | MX | Google Workspace MX records including `smtp.google.com`, `aspmx.l.google.com`, and Google alternates |
+| `@` | TXT | `v=spf1 include:_spf.google.com ~all` |
+
+Receiving mail for `support@dt-nt.com` works through Google Workspace aliasing to `ash@denalitechs.com`.
+
+If DTNT starts sending automated mail from `@dt-nt.com`, add/check DKIM and DMARC first. Inbound Gmail being active is not the same thing as outbound-domain hardening.
