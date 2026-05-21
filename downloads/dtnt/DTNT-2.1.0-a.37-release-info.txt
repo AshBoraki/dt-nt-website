@@ -1,0 +1,14 @@
+DTNT Release Notes
+
+Public version: 2.1.0
+Product: Denali Tech Net-Tools
+Install path: Microsoft Store
+Support: support@dt-nt.com
+
+What's improved:
+- Pro activation reliability is improved.
+- The desktop app now routes activation checks through the current DTNT fulfillment backend.
+- Purchase email plus activation code checks stay aligned with the public checkout flow.
+
+See the current public release notes:
+https://dt-nt.com/changelog/
