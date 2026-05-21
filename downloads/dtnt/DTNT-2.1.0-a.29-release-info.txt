@@ -1,0 +1,14 @@
+DTNT Release Notes
+
+Public version: 2.1.0
+Product: Denali Tech Net-Tools
+Install path: Microsoft Store
+Support: support@dt-nt.com
+
+What's improved:
+- Customer-facing release and support wording inside the app is cleaner.
+- Dashboard and support text avoid internal publishing language.
+- Public install and support references stay aligned with dt-nt.com and Microsoft Store.
+
+See the current public release notes:
+https://dt-nt.com/changelog/
