@@ -1,0 +1,15 @@
+DTNT Release Notes
+
+Public version: 2.1.0
+Technical version: 2.1.0-a.50
+Product: Denali Tech Net-Tools
+Install path: Microsoft Store
+Support: support@dt-nt.com
+
+What's improved:
+- Pro activation layout is easier to read and use.
+- Activation email recovery support is now available through the DTNT activation help page.
+- Purchase email plus activation code checks stay aligned with the public checkout flow.
+
+See the current public release notes:
+https://dt-nt.com/changelog/
