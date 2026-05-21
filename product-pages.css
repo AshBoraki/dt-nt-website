@@ -93,6 +93,11 @@ h3 { font-size: 1.18rem; line-height: 1.18; }
 .timeline-item time { display: inline-flex; margin-bottom: 0.45rem; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-strong); }
 .note { background: linear-gradient(180deg, #fffdf9 0%, #fff 100%); }
 .note p { margin: 0.6rem 0 0; color: var(--muted); line-height: 1.7; }
+.support-form { display: grid; gap: 0.85rem; margin-top: 1rem; }
+.support-form label { display: grid; gap: 0.4rem; color: var(--ink); font-weight: 800; }
+.support-form input { min-height: 46px; width: 100%; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); font: inherit; padding: 0.82rem 0.95rem; }
+.support-form input:focus { outline: 3px solid rgba(217, 119, 22, 0.18); border-color: var(--accent); }
+.form-status { min-height: 1.4rem; margin: 0; color: var(--muted); line-height: 1.55; }
 .footer { padding: 28px 0 36px; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; color: var(--muted); font-size: 0.92rem; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 0.9rem; }

@@ -42,6 +42,7 @@
         <section class="page-hero"><div class="wrap page-hero-grid"><div><span class="eyebrow">DTNT activation</span><h1>Buy once. Activate in-app. Keep moving.</h1><p class="lead">The commercial flow stays simple: install DTNT, buy Pro on Stripe, then use the purchase email and activation code inside Profiles. The activation file remains available for support cases only.</p><div class="actions"><a class="button button-primary" data-dtnt-buy="activation-page" href="/buy/">Buy Pro</a><a class="button button-secondary" href="/legal/">Read legal terms</a></div></div><div class="hero-panel"><h2>Activation steps</h2><div class="info-table"><div class="info-row"><strong>1. Purchase</strong><span>Buy Pro through the secure DTNT checkout.</span></div><div class="info-row"><strong>2. Delivery</strong><span>Use the purchase email and activation code from the DTNT delivery email.</span></div><div class="info-row"><strong>3. In-app unlock</strong><span>Open Profiles, choose Activate Pro, and enter the purchase email and code.</span></div></div></div></div></section>
         <section class="page-section"><div class="wrap step-grid"><article class="step"><div class="step-number">1</div><h3>Install DTNT first</h3><p class="panel-copy">Use Microsoft Store first and make sure the app opens on the machine you plan to keep using.</p></article><article class="step"><div class="step-number">2</div><h3>Buy Pro on the secure checkout</h3><p class="panel-copy">The purchase flow is separate from app delivery so the commercial step stays clear and the install path stays flexible.</p></article><article class="step"><div class="step-number">3</div><h3>Unlock inside Profiles</h3><p class="panel-copy">Enter the purchase email and activation code in the app. That is the intended path for normal use.</p></article></div></section>
         <section class="page-section"><div class="wrap panel-grid two-up"><article class="note"><h3>What the delivery email should contain</h3><p>Your paid delivery email should give you the purchase email reference and activation code needed for the in-app unlock. Keep that email for support and future machine transitions.</p></article><article class="note"><h3>When the fallback matters</h3><p>The activation file exists for support cases. It is not the primary flow and should not be the first thing a normal buyer needs to think about.</p></article></div></section>
+        <section class="page-section compact"><div class="wrap panel-grid two-up"><article class="note"><h3>Need the activation email again?</h3><p>Enter the email used at checkout. If a fulfilled DTNT Pro order exists for that email, DTNT will resend the activation message to that same address.</p><form class="support-form" id="activation-recovery-form"><label for="recovery-email">Purchase email<input id="recovery-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></label><button class="button button-primary" type="submit">Resend activation email</button><p class="form-status" id="activation-recovery-status" role="status" aria-live="polite"></p></form></article><article class="note"><h3>Why this is safe</h3><p>The recovery form never displays activation codes on the website and does not reveal whether an email has an order. The message can only be resent to the original purchase email.</p></article></div></section>
     </main>
     <footer class="footer"><div class="wrap footer-inner"><span>DTNT by Denali Tech Inc</span><div class="footer-links"><a href="/legal/#privacy">Privacy</a><a href="/legal/#terms">Terms</a><a href="/legal/#refund">Refunds</a><a href="/">Overview</a></div></div></footer>
     <script src="/commerce.js"></script>
@@ -50,6 +51,33 @@
             const commerce = window.DTNTCommerce;
             if (commerce) {
                 await commerce.hydrateLatestRelease(document);
+            }
+
+            const form = document.getElementById("activation-recovery-form");
+            const email = document.getElementById("recovery-email");
+            const status = document.getElementById("activation-recovery-status");
+            if (commerce && form && email && status) {
+                form.addEventListener("submit", async (event) => {
+                    event.preventDefault();
+                    const baseUrl = String(commerce.config.fulfillmentApiBaseUrl || "").replace(/\/+$/, "");
+                    if (!baseUrl) {
+                        status.textContent = `Email ${commerce.config.supportEmail} with your checkout email and receipt reference.`;
+                        return;
+                    }
+
+                    status.textContent = "Sending request...";
+                    try {
+                        const response = await fetch(`${baseUrl}/api/activation/recover`, {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({ email: email.value.trim() })
+                        });
+                        const payload = await response.json().catch(() => ({}));
+                        status.textContent = payload.message || "If that email has a fulfilled DTNT Pro order, the activation email will be resent shortly.";
+                    } catch {
+                        status.textContent = `Email ${commerce.config.supportEmail} with your checkout email and receipt reference.`;
+                    }
+                });
             }
         })();
     </script>
