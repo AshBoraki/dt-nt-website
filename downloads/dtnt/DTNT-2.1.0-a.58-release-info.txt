@@ -1,0 +1,15 @@
+DTNT Release Notes
+
+Public version: 2.1.0
+Technical version: 2.1.0-a.58
+Product: Denali Tech Net-Tools
+Install path: Microsoft Store
+Support: support@dt-nt.com
+
+What's improved:
+- Export and restore wording is cleaner and less technical in the app.
+- The Profiles Pro panel is easier to read, with clearer activation status.
+- Saved Wi-Fi key actions and profile tools are grouped more clearly.
+
+See the current public release notes:
+https://dt-nt.com/changelog/
