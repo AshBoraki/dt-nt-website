@@ -35,4 +35,21 @@ Observed mail records on 2026-05-18:
 
 Receiving mail for `support@dt-nt.com` works through Google Workspace aliasing to `ash@denalitechs.com`.
 
-If DTNT starts sending automated mail from `@dt-nt.com`, add/check DKIM and DMARC first. Inbound Gmail being active is not the same thing as outbound-domain hardening.
+## Brevo Sending DNS
+
+Brevo domain authentication was started for `dt-nt.com` on 2026-05-21. Add these Porkbun DNS records so automated DTNT activation email can move from the Brevo relay sender to `DTNT <support@dt-nt.com>`.
+
+| Host | Type | Answer |
+| --- | --- | --- |
+| `brevo1._domainkey` | CNAME | `b1.dt-nt-com.dkim.brevo.com` |
+| `brevo2._domainkey` | CNAME | `b2.dt-nt-com.dkim.brevo.com` |
+| `@` | TXT | `brevo-code:263053223faec9274ed73f4e387eb72e` |
+| `_dmarc` | TXT | `v=DMARC1; p=none; rua=mailto:rua@dmarc.brevo.com` |
+
+Update the existing root SPF TXT record instead of creating a second SPF record:
+
+```text
+v=spf1 include:_spf.google.com include:spf.brevo.com mx ~all
+```
+
+Inbound Gmail being active is not the same thing as outbound-domain hardening.

@@ -5,10 +5,11 @@ Current truth checked on 2026-05-21.
 ## May 21, 2026 Audit Result
 
 - DTNT customer activation email does not use Resend, SendGrid, Mailgun, Postmark, or Sender.
-- DTNT customer activation email is sent by the DTNT fulfillment service through SMTP settings named `DTNT_FULFILLMENT_SMTP_*`.
+- DTNT customer activation email is sent by the Cloudflare Worker fulfillment service through Brevo.
 - Deleting a Resend API key should not break DTNT activation email by itself.
-- The bigger DTNT risk found on May 21, 2026 is that `https://dtnt-fulfillment-a07d.azurewebsites.net/health` returns Azure `403` with `Error 403 - This web app is stopped`.
-- Because the website still has live Stripe checkout enabled and still points status checks to that fulfillment URL, paid checkout should not be considered fully safe until the fulfillment app is running again.
+- The old Azure fulfillment endpoint is not the live customer path anymore.
+- The live fulfillment API is `https://dtnt-fulfillment.denali-dtnt.workers.dev`.
+- A live paid-order activation was verified on May 21, 2026 using the raw Worker response and the packaged DTNT public key.
 
 Separate note: PropoKit does use `RESEND_API_KEY`. If a Resend key was deleted, check PropoKit separately before relying on PropoKit outbound email.
 
@@ -49,10 +50,16 @@ Do not recreate paid users for `hello@denalitechs.com`, `services@denalitechs.co
 
 DTNT currently uses `support@dt-nt.com` as a support/reply address. Receiving mail is configured.
 
-If DTNT later sends automated email from `@dt-nt.com`, add/check these before launch:
+DTNT automated activation email currently sends through Brevo. Brevo has an active sender for `ash@denalitechs.com`, which is why Gmail may show the Brevo relay domain until the sending domain is authenticated.
 
-- Google Workspace DKIM for `dt-nt.com`
-- DMARC for `_dmarc.dt-nt.com`
-- Any transactional provider DKIM/return-path records if a provider is introduced
+Brevo domain authentication was started for `dt-nt.com` on May 21, 2026. Add the Brevo DNS records in Porkbun, wait for verification, then switch the Worker sender to:
+
+- `DTNT <support@dt-nt.com>`
+
+The root SPF record should be one merged record for Google Workspace and Brevo:
+
+```text
+v=spf1 include:_spf.google.com include:spf.brevo.com mx ~all
+```
 
 Do not assume the DTNT domain is fully hardened for outbound automation just because inbound Gmail works.
