@@ -1,0 +1,15 @@
+DTNT Release Notes
+
+Public version: 2.1.0
+Technical version: 2.1.0-a.56
+Product: Denali Tech Net-Tools
+Install path: Microsoft Store
+Support: support@dt-nt.com
+
+What's improved:
+- Pro activation is more reliable when checking a purchase email and activation code.
+- License verification better protects the packaged app from stale local activation settings.
+- The activation window keeps key actions easier to reach at common Windows scaling values.
+
+See the current public release notes:
+https://dt-nt.com/changelog/

@@ -7,7 +7,7 @@ Support: support@dt-nt.com
 
 What's improved:
 - Customer-facing release and support wording inside the app is cleaner.
-- Dashboard and support text avoid internal publishing language.
+- Dashboard and support text now stays focused on customer-ready install and support details.
 - Public install and support references stay aligned with dt-nt.com and Microsoft Store.
 
 See the current public release notes:
