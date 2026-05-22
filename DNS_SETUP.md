@@ -31,13 +31,13 @@ Observed mail records on 2026-05-18:
 | Host | Type | Answer |
 | --- | --- | --- |
 | `@` | MX | Google Workspace MX records including `smtp.google.com`, `aspmx.l.google.com`, and Google alternates |
-| `@` | TXT | `v=spf1 include:_spf.google.com ~all` |
+| `@` | TXT | `v=spf1 include:_spf.google.com include:spf.brevo.com mx ~all` |
 
 Receiving mail for `support@dt-nt.com` works through Google Workspace aliasing to `ash@denalitechs.com`.
 
 ## Brevo Sending DNS
 
-Brevo domain authentication was started for `dt-nt.com` on 2026-05-21. Add these Porkbun DNS records so automated DTNT activation email can move from the Brevo relay sender to `DTNT <support@dt-nt.com>`.
+Brevo domain authentication for `dt-nt.com` was completed on 2026-05-21. Keep these Porkbun DNS records so automated DTNT activation email can send as `DTNT <support@dt-nt.com>`.
 
 | Host | Type | Answer |
 | --- | --- | --- |
@@ -46,7 +46,7 @@ Brevo domain authentication was started for `dt-nt.com` on 2026-05-21. Add these
 | `@` | TXT | `brevo-code:263053223faec9274ed73f4e387eb72e` |
 | `_dmarc` | TXT | `v=DMARC1; p=none; rua=mailto:rua@dmarc.brevo.com` |
 
-Update the existing root SPF TXT record instead of creating a second SPF record:
+The existing root SPF TXT record was updated instead of creating a second SPF record:
 
 ```text
 v=spf1 include:_spf.google.com include:spf.brevo.com mx ~all

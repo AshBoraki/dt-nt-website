@@ -26,7 +26,7 @@ Separate note: PropoKit does use `RESEND_API_KEY`. If a Resend key was deleted, 
 - In Google Admin, `dt-nt.com` is configured as a verified secondary domain with Gmail activated.
 - Public DNS has Google MX records for `dt-nt.com`.
 - Public DNS has SPF at the root:
-  - `v=spf1 include:_spf.google.com ~all`
+  - `v=spf1 include:_spf.google.com include:spf.brevo.com mx ~all`
 
 ## Active Workspace Aliases Relevant To DTNT
 
@@ -48,11 +48,11 @@ Do not recreate paid users for `hello@denalitechs.com`, `services@denalitechs.co
 
 ## Sending Mail
 
-DTNT currently uses `support@dt-nt.com` as a support/reply address. Receiving mail is configured.
+DTNT currently uses `support@dt-nt.com` as the support/reply address. Receiving mail is configured.
 
-DTNT automated activation email currently sends through Brevo. Brevo has an active sender for `ash@denalitechs.com`, which is why Gmail may show the Brevo relay domain until the sending domain is authenticated.
+DTNT automated activation email currently sends through Brevo as `DTNT <support@dt-nt.com>`.
 
-Brevo domain authentication was started for `dt-nt.com` on May 21, 2026. Add the Brevo DNS records in Porkbun, wait for verification, then switch the Worker sender to:
+Brevo domain authentication was completed for `dt-nt.com` on May 21, 2026. Porkbun DNS has the Brevo DKIM, Brevo verification TXT, DMARC, and merged SPF records, and Brevo reports the domain verified/authenticated.
 
 - `DTNT <support@dt-nt.com>`
 
