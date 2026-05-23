@@ -422,10 +422,10 @@
             await commerce.hydrateLatestRelease(document);
 
             if (!commerce.checkoutIsConfigured()) {
-                statusCopy.textContent = "Secure checkout is not connected yet. Free Microsoft Store install stays available while the Stripe link is added.";
-                launchNote.textContent = "Keep every Pro button pointed at /buy/ so the paid path stays in one place.";
-                recoveryCopy.textContent = "Before live charges, keep the success and cancel pages ready so buyers always have a clear way forward.";
-                returnNote.textContent = "Live checkout should return to /success/ after payment and keep /cancel/ available as the fallback page.";
+                statusCopy.textContent = "Secure checkout is temporarily unavailable. Free Microsoft Store install stays available while support helps with Pro orders.";
+                launchNote.textContent = "DTNT Free remains available from Microsoft Store.";
+                recoveryCopy.textContent = "If you already paid and need activation help, contact support with the checkout email address and receipt details.";
+                returnNote.textContent = "If checkout closes before payment, no charge should be completed. Return here or contact support for help.";
                 return;
             }
 

@@ -326,10 +326,10 @@
             });
 
             if (!commerce.checkoutIsLive()) {
-                document.getElementById("status-eyebrow").textContent = "Checkout test cancelled";
-                document.getElementById("cancel-title").textContent = "Stripe test checkout was cancelled.";
+                document.getElementById("status-eyebrow").textContent = "Checkout cancelled";
+                document.getElementById("cancel-title").textContent = "Stripe checkout was cancelled.";
                 document.getElementById("cancel-copy").textContent = "This page is the fallback path for a checkout that was closed before payment.";
-                document.getElementById("support-copy").innerHTML = `If the test checkout feels wrong or you expected a different path, send what you saw to <a data-dtnt-support-email href="mailto:${commerce.config.supportEmail}">${commerce.config.supportEmail}</a>.`;
+                document.getElementById("support-copy").innerHTML = `If checkout feels wrong or you expected a different path, send what you saw to <a data-dtnt-support-email href="mailto:${commerce.config.supportEmail}">${commerce.config.supportEmail}</a>.`;
                 commerce.hydrateSupportEmail(document);
             }
         })();

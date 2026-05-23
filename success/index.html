@@ -528,8 +528,8 @@
                 downloadsCopy.textContent = "Use Microsoft Store if you still need the app. Pro activation needs a valid purchase email and activation code.";
                 buildCopy.textContent = "Current version:";
                 hashCopy.hidden = true;
-                supportTitle.textContent = "Still testing?";
-                supportCopy.innerHTML = `If the Stripe test finishes but the page still feels wrong, send the checkout link and what you saw to <a data-dtnt-support-email href="mailto:${commerce.config.supportEmail}">${commerce.config.supportEmail}</a>.`;
+                supportTitle.textContent = "Need activation help?";
+                supportCopy.innerHTML = `If payment finished but this page still feels wrong, send the checkout link and what you saw to <a data-dtnt-support-email href="mailto:${commerce.config.supportEmail}">${commerce.config.supportEmail}</a>.`;
                 commerce.hydrateSupportEmail(document);
             }
 
