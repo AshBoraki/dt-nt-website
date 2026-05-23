@@ -1,0 +1,15 @@
+DTNT Release Notes
+
+Public version: 2.1.0
+Technical version: 2.1.0-a.60
+Product: Denali Tech Net-Tools
+Install path: Microsoft Store
+Support: support@dt-nt.com
+
+What's improved:
+- Improved IP Scanner records, scan indicators, and device login controls.
+- Job inventory actions are clearer for saving, opening, and exporting IP scan records.
+- Device login details are easier to manage for field documentation.
+
+See the current public release notes:
+https://dt-nt.com/changelog/
