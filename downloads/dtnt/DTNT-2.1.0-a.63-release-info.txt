@@ -1,0 +1,15 @@
+DTNT Release Notes
+
+Public version: 2.1.0
+Technical version: 2.1.0-a.63
+Product: Denali Tech Net-Tools
+Install path: Microsoft Store
+Support: support@dt-nt.com
+
+What's improved:
+- Improved app wording, export dialogs, and taskbar icon clarity.
+- Network refresh and support-only activation wording are cleaner for customers.
+- Export and import dialogs use DTNT-branded file names without extra technical noise.
+
+See the current public release notes:
+https://dt-nt.com/changelog/
