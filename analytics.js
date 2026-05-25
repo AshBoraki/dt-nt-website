@@ -185,6 +185,24 @@
         sendMicrosoftUetEvent(eventName, payload);
     }
 
+    function trackOutboundAction(eventName, element, detail = {}) {
+        if (!element) {
+            return;
+        }
+
+        const label = element.dataset.dtntDownload
+            || element.dataset.dtntBuy
+            || element.textContent
+            || eventName;
+        const href = element.getAttribute("href") || "";
+
+        push(eventName, {
+            action_label: String(label).trim().slice(0, 120),
+            destination_url: href.slice(0, 300),
+            ...detail
+        });
+    }
+
     function sendPageView() {
         const pageView = {
             page_title: document.title,
@@ -277,6 +295,36 @@
                 loadGtag();
                 loadMicrosoftUet();
             }, { once: true, passive: true });
+        });
+
+        document.addEventListener("click", event => {
+            const target = event.target && event.target.closest
+                ? event.target.closest("[data-dtnt-download], [data-dtnt-buy], a[href^='mailto:']")
+                : null;
+            if (!target) {
+                return;
+            }
+
+            if (target.matches("[data-dtnt-download]")) {
+                trackOutboundAction("dtnt_store_click", target, {
+                    event_category: "download",
+                    download_label: target.dataset.dtntDownload || "download"
+                });
+                return;
+            }
+
+            if (target.matches("[data-dtnt-buy]")) {
+                trackOutboundAction("dtnt_buy_click", target, {
+                    event_category: "purchase_intent",
+                    buy_label: target.dataset.dtntBuy || "buy"
+                });
+                return;
+            }
+
+            trackOutboundAction("dtnt_support_click", target, {
+                event_category: "support",
+                support_channel: "email"
+            });
         });
 
         loadMicrosoftUet();
