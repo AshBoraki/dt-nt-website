@@ -27,13 +27,7 @@
             return;
         }
 
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            event: eventName,
-            page_path: window.location.pathname,
-            page_title: document.title,
-            ...detail
-        });
+        // If privacy controls are unavailable, optional measurement stays off.
     }
 
     function instrumentLinks(root = document, release = null) {
