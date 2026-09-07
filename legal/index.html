@@ -425,7 +425,7 @@
             <section class="hero">
                 <div class="eyebrow">DTNT Legal</div>
                 <h1>Terms for the DTNT software, website, and Pro purchase.</h1>
-                <p class="hero-copy">These DTNT policies apply to the Windows software, the DTNT website purchase flow, and the Pro activation path. Effective date: May 23, 2026.</p>
+                <p class="hero-copy">These DTNT policies apply to the Windows software, the DTNT website purchase flow, and the Pro activation path. Last updated: September 7, 2026.</p>
 
                 <div class="meta-grid">
                     <div class="meta-card">
@@ -479,6 +479,7 @@
 
                     <h3>3. Activation and delivery</h3>
                     <p>DTNT Pro is currently fulfilled through a Denali Tech purchase flow that can include Stripe-hosted checkout, activation email delivery, and signed entitlement records. The preferred public install path for DTNT is Microsoft Store. Microsoft Store distribution does not change these Denali Tech license terms and does not make Microsoft responsible for DTNT support, Pro activation, or Denali Tech checkout. Denali Tech may provide a backup install or activation path only when support decides it is appropriate for a specific customer case. Activation can require a purchase email plus activation code, a signed license file fallback, or another entitlement method Denali Tech later makes available.</p>
+                    <p>Online activation associates the purchase with a DTNT-generated device identifier and Windows computer name. The app automatically revalidates that activation when it starts. The current online activation method allows up to fourteen days after the last successful validation when the licensing service cannot be reached; after that, Pro access on the PC can be cleared until activation succeeds again. This connection requirement also applies to a one-time purchase. A signed activation file, when support supplies one, can have different validation behavior. The <a href="#privacy">Privacy Notice</a> describes the information used.</p>
                     <p>Keep your purchase receipt and delivery email. If you replace hardware or need a reasonable activation reset, contact Denali Tech. Reset or reissue decisions are made to prevent abuse and protect legitimate customers.</p>
 
                     <h3>4. Updates and future releases</h3>
@@ -489,12 +490,14 @@
 
                     <h3>6. Ownership</h3>
                     <p>DTNT is licensed, not sold. Denali Tech Inc and its licensors retain all ownership, title, and intellectual property rights in the software, branding, screenshots, and related materials.</p>
+                    <p>Third-party components are governed by their applicable license terms. This agreement does not limit rights those licenses grant for those components.</p>
 
                     <h3>7. Warranty disclaimer</h3>
                     <p>Except where law does not allow it, DTNT is provided "as is" and "as available." Denali Tech disclaims implied warranties of merchantability, fitness for a particular purpose, title, and non-infringement. Denali Tech does not guarantee uninterrupted operation, perfect compatibility with every Windows environment, or complete detection of every network condition.</p>
 
                     <h3>8. Limitation of liability</h3>
                     <p>To the maximum extent allowed by law, Denali Tech will not be liable for indirect, incidental, special, consequential, exemplary, or punitive damages, or for lost profits, lost data, lost business, or procurement of substitute services. Denali Tech's total liability arising out of DTNT will not exceed the amount you paid for the applicable DTNT license in the twelve months before the claim.</p>
+                    <p>Nothing in this agreement excludes or limits liability, statutory warranties, remedies, or consumer rights that applicable law does not allow to be excluded or limited.</p>
                 </article>
 
                 <article class="policy" id="terms">
@@ -503,6 +506,7 @@
 
                     <h3>1. Orders and pricing</h3>
                     <p>DTNT Free is currently offered as a no-charge Microsoft Store install. DTNT Pro is sold as a one-time purchase unless Denali Tech clearly states otherwise before checkout. Pricing, launch offers, and availability can change prospectively.</p>
+                    <p>The online Pro activation method requires an internet connection for activation and subsequent validation, including the offline grace period described in the <a href="#eula">EULA</a>. A one-time purchase does not imply permanently offline activation.</p>
 
                     <h3>2. Payment processing</h3>
                     <p>Payments may be processed by Stripe or another payment provider shown during checkout. Denali Tech does not store full payment card numbers on the DTNT website or inside the desktop app.</p>
@@ -523,59 +527,69 @@
 
                     <h3>7. Governing law</h3>
                     <p>To the extent legally permitted, DTNT website and sales terms are governed by Illinois law, without regard to conflict-of-law rules, except where mandatory consumer-protection law in your home jurisdiction says otherwise.</p>
+                    <p>Nothing in these terms removes consumer rights or remedies that cannot lawfully be waived.</p>
                 </article>
 
                 <article class="policy" id="privacy">
                     <h2>DTNT Privacy Notice</h2>
-                    <p class="section-copy">This notice covers the DTNT sales pages, legal pages, support intake, checkout-linked communications, and the software-related records Denali Tech keeps to fulfill orders and activation.</p>
-
-                    <h3>1. Information we collect</h3>
+                    <p>Denali Tech Inc provides Denali Tech Net-Tools (DTNT). This policy covers the Windows app, DTNT website, checkout and activation fulfillment, and support. For privacy questions or requests, contact <a href="mailto:support@dt-nt.com">support@dt-nt.com</a>.</p>
+                    <h3>1. Information collected</h3>
+                    <p>Denali Tech may collect:</p>
                     <ul>
-                        <li>Contact details you provide, such as your name, email address, and support messages.</li>
-                        <li>Order and payment metadata from Stripe or other providers, such as order identifiers, receipt details, and billing status.</li>
-                        <li>Activation and licensing records needed to generate, verify, replace, or support DTNT Pro entitlements.</li>
-                        <li>Basic website logs and anti-abuse information generated by your browser or our host, such as IP address, timestamps, pages requested, and user-agent data.</li>
-                        <li>Website analytics and attribution events, such as page views, outbound Microsoft Store clicks, checkout starts, referrer details, and campaign parameters when available.</li>
+                        <li>contact details you provide, such as your name, email address, and support messages</li>
+                        <li>order and payment metadata from Stripe or another provider identified at checkout, such as order and payment references, purchaser name and email, product, amount, currency, payment status, and fulfillment timestamps; the desktop app does not receive full payment card numbers</li>
+                        <li>activation records, including purchase email, activation code, a randomly generated persistent device identifier, Windows computer name, device authentication records, seat counts, and activation, validation, and release timestamps</li>
+                        <li>delivery-email records, including recipient, subject, delivery status, provider reference, timestamps, and error details; support-assisted grants can also contain the reason and operator reference</li>
+                        <li>basic website logs and anti-abuse information generated by your browser or our host, such as IP address, timestamps, pages requested, and user-agent data</li>
+                        <li>website measurement information when the relevant analytics or advertising features are enabled, as described in section 4</li>
                     </ul>
-
                     <h3>2. DTNT app data</h3>
-                    <p>DTNT is designed primarily as a local Windows tool. Network scan results, Wi-Fi profile data, IP Scanner labels, device login notes, saved exports, activation records, purchase-email plus activation-code state, fallback activation files, and local diagnostic logs are generally stored on your device unless you choose to export, email, upload, or otherwise share them.</p>
-                    <p>Microsoft Store install, update, account, device, and storefront records are handled by Microsoft under Microsoft's own terms and privacy policies. Denali Tech receives only the information Microsoft or you make available to Denali Tech through normal Store, support, analytics, or customer communication channels.</p>
-                    <p>The DTNT website may use Google Analytics, Microsoft Advertising Universal Event Tracking, and browser storage, including localStorage, to remember campaign attribution for up to 30 days. This can include UTM parameters, referrer, landing page, page path, page title, and product events such as install clicks, checkout starts, and purchase confirmation events. DTNT analytics should not be used to intentionally collect payment card numbers, saved Wi-Fi keys, Stripe checkout session identifiers, or private customer network inventories.</p>
+                    <p>DTNT processes network adapter details, nearby Wi-Fi names and radio identifiers, IP and MAC addresses, hostnames, service responses, saved Windows Wi-Fi profiles, and diagnostic results on your PC. Saved device labels, site inventory, speed-test history, settings, and exports also remain local unless you share them. The app does not automatically upload those inventories, saved Wi-Fi keys, device passwords, exports, or diagnostic logs to Denali Tech. Online activation and update checks operate separately, as described in section 3.</p>
                     <p>When you use the Profiles workspace, DTNT can read saved Windows Wi-Fi profile names, security labels, and saved keys from Windows so it can show the local profile state on that machine. Saved keys are shown or copied locally when you choose to reveal them, and they are not included in the DTNT profile export format by default.</p>
-                    <p>When you run IP scanner and related discovery workflows, DTNT can send ping, DNS, TCP-connect, ARP-assisted, and short HTTP(S) requests across the local range you select in order to identify responsive devices and likely web interfaces. DTNT may temporarily read headers and a small body snippet to classify a likely local web interface, but that body sample is not kept as a saved export field by default.</p>
-                    <p>When you choose to save a device login in IP Scanner, DTNT stores the username and a Windows-protected password record locally under the current Windows account. Device login records are meant for customer/site documentation on your own machine, are not sent to Denali Tech by default, and are not included in job inventory exports by default.</p>
-                    <p>Local diagnostic logs can contain timestamps, component names, status messages, and exception details produced by the app on your device.</p>
-                    <p>Some DTNT features necessarily communicate with third-party endpoints that you trigger, such as payment providers, Microsoft Store, update metadata, speed-test services, DNS services, likely local web interfaces, or links you open from inside the app.</p>
-                    <p>Third-party services may include Microsoft Store, Stripe, Google Analytics, Microsoft Advertising, GitHub Pages or other hosting providers, Cloudflare Worker/D1 fulfillment, Brevo delivery email, and email or support providers. Their own terms and privacy policies apply to the information they process.</p>
-
-                    <h3>3. Children</h3>
-                    <p>Even if an app store displays a general audience age rating, DTNT is marketed for technicians, installers, business owners, and other users performing network diagnostics. It is not directed to children under 13, and Denali Tech does not knowingly collect personal information from children under 13.</p>
-
-                    <h3>4. How we use information</h3>
+                    <p>When you save a device login in IP Scanner, its password is protected locally using Windows data protection for the current Windows account. Its username and identifying information, such as the device and site, are stored locally without that password protection. These login records are not included in DTNT job inventory exports. Revealing or copying a password exposes it on screen or to the Windows clipboard; clipboard history or synchronization, if enabled in Windows, can retain or share copied text.</p>
+                    <p>When you run IP Scanner and related discovery workflows, DTNT can send ping, DNS, TCP-connect, ARP-assisted, and short HTTP(S) requests to the selected targets to identify responsive devices and likely web interfaces. DTNT may temporarily read headers and a small body snippet to classify a web interface; that body sample is not included in the standard export. DNS resolvers, target devices, and network operators can observe these requests. Use these tools only where you have authorization.</p>
+                    <p>Local diagnostic logs can contain timestamps, component names, status messages, file paths, and exception details. Settings, logs, inventories, and exports are not all encrypted by DTNT. Protect your Windows account, devices, backups, and exported files, and review files before sending them to support.</p>
+                    <h3>3. Online app features and automatic requests</h3>
                     <ul>
-                        <li>To deliver downloads, activation materials, receipts, and order support.</li>
-                        <li>To prevent fraud, misuse, duplicate fulfillment, or activation abuse.</li>
-                        <li>To answer support questions and improve release, packaging, and fulfillment quality.</li>
-                        <li>To comply with legal obligations and protect Denali Tech, its customers, and its systems.</li>
+                        <li><strong>Pro activation:</strong> activating online sends your purchase email, activation code, random device identifier, and Windows computer name to Denali Tech&#39;s fulfillment service hosted on Cloudflare. The service stores order and device activation records to verify purchases and manage licensed seats. It returns a signed entitlement and device authentication token for local use. The random identifier is created by DTNT; it is not a hardware serial number.</li>
+                        <li><strong>License validation:</strong> after online activation, the app automatically checks the stored activation when it starts, sending the device identifier and authentication token. Successful validation updates the server&#39;s last-validation timestamp. Releasing this PC sends the identifier, token, and a release reason. Releasing a seat does not delete the order or its activation history.</li>
+                        <li><strong>Update checks:</strong> the app automatically requests release metadata from the DTNT website when it starts and can check again while running or when you select Check for updates. The hosting service receives the request&#39;s IP address and normal connection information. The update check does not upload your scan results. Microsoft separately processes Store installations and updates.</li>
+                        <li><strong>Speed tests:</strong> when you start a test, DTNT downloads test data from and uploads generated test bytes to <code>speed.cloudflare.com</code>. It does not upload your personal files for the speed test. Cloudflare receives your public IP address and connection information. Tests can transfer substantial data and use your network bandwidth.</li>
+                        <li><strong>Other tools and links:</strong> ping, traceroute, DNS, port checks, and web links contact their selected targets, your DNS provider, or the site opened in your browser. The receiving services process these requests under their own policies.</li>
                     </ul>
-
-                    <h3>5. Sharing</h3>
-                    <p>Denali Tech does not sell personal information. We may share limited information with service providers that help us operate DTNT, such as Microsoft Store, payment processors, email or hosting providers, analytics providers, release hosting services, fulfillment services, and support tooling, and where required by law.</p>
-
-                    <h3>6. Security</h3>
-                    <p>Denali Tech uses reasonable administrative, technical, and service-provider safeguards for the records it controls. No website, email, payment provider, cloud service, or local device can be guaranteed perfectly secure.</p>
-
-                    <h3>7. Retention</h3>
-                    <p>Typical order, activation, and support records may be kept for up to seven years where needed for tax, accounting, fraud-prevention, chargeback, license, and support purposes, unless a longer period is required or allowed by law. Local app data stored on a customer's device is controlled by that customer.</p>
-
-                    <h3>8. Choices and requests</h3>
-                    <p>You can contact <a href="mailto:support@dt-nt.com">support@dt-nt.com</a> to request access, correction, or deletion of personal information that Denali Tech actually controls, subject to legal, accounting, fraud-prevention, and security retention needs.</p>
+                    <p>The activation and update hosts necessarily receive IP addresses and request metadata as part of providing their services. The app&#39;s local operation does not mean that it makes no internet requests.</p>
+                    <p>Starting with DTNT version 2.1.0-a.75, the saved device authentication token is protected using Windows data protection for the current Windows account. Earlier versions stored this token as readable local data; the updated app protects it when it next saves a valid activation. Other local activation metadata, including your purchase email, device identifier, computer name, and timestamps, remains readable to processes that can access those files.</p>
+                    <h3>4. Website measurement</h3>
+                    <p>The DTNT website supports Google Analytics and Microsoft Advertising Universal Event Tracking (UET) for page views and Microsoft Store and checkout clicks. These services can receive browser and device information, IP address, page information, event details, and their own online identifiers. Website campaign attribution can include UTM parameters, referrer, and landing page, remembered in your browser for use over up to 30 days. This website measurement is separate from the Windows app&#39;s local network scans.</p>
+                    <p>Optional analytics and advertising start disabled. Use <strong>Privacy choices</strong> to choose either category, reject both, or change a previous choice. The site uses your saved preference for up to 180 days; campaign attribution is stored only after optional measurement is allowed and used for up to 30 days. Expired browser-storage records are removed when the site next reads them, so they can remain on a device that does not revisit the site until you clear its storage. A Global Privacy Control signal disables optional measurement. Checkout-result and activation-help pages, and URLs containing recognized checkout or activation credentials, do not load optional measurement.</p>
+                    <p>Withdrawing permission stops future optional measurement and clears the site&#39;s first-party tracking storage and cookies that its controls can access; the page reloads to unload active measurement scripts. This does not erase records already sent to providers or cookies set on another provider&#39;s domain. Browser settings can also block cookies or clear site storage. Do not put passwords, activation codes, payment details, or private network information in campaign links or public website forms.</p>
+                    <h3>5. How information is used</h3>
+                    <p>Denali Tech uses information to:</p>
+                    <ul>
+                        <li>deliver downloads, activation materials, receipts, and order support</li>
+                        <li>prevent fraud, misuse, duplicate fulfillment, or activation abuse</li>
+                        <li>answer support questions and improve release, packaging, and fulfillment quality</li>
+                        <li>understand website use and measure campaigns when the relevant optional measurement is enabled</li>
+                        <li>comply with legal obligations and protect Denali Tech, its customers, and its systems</li>
+                    </ul>
+                    <h3>6. Sharing and service providers</h3>
+                    <p>Information is disclosed to providers as needed for the features described above, including Stripe for checkout, Cloudflare for fulfillment hosting and database services and for speed tests, Brevo for configured activation-email delivery, Microsoft for Store distribution, and Google and Microsoft for enabled website measurement. Email delivery providers receive the recipient and message contents, including activation instructions. Support providers receive information you choose to send. Information may also be disclosed where required by law.</p>
+                    <p>Provider information and choices are available in the <a href="https://stripe.com/privacy">Stripe privacy policy</a>, <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare privacy policy</a>, <a href="https://www.brevo.com/legal/privacypolicy/">Brevo privacy policy</a>, <a href="https://privacy.microsoft.com/privacystatement">Microsoft privacy statement</a>, and <a href="https://policies.google.com/privacy">Google privacy policy</a>. Providers can process information in countries other than yours. Their own policies describe processing they perform independently; they do not replace Denali Tech&#39;s responsibilities for information it controls.</p>
+                    <p>The desktop app does not send your local network inventories or saved credentials to advertising providers. Website advertising measurement is a separate disclosure of browser and event information and is subject to the website&#39;s privacy controls.</p>
+                    <h3>7. Retention and local controls</h3>
+                    <p>Order, activation, and support records may be kept for as long as reasonably needed to fulfill purchases, support reinstall or activation questions, resolve disputes, meet tax and accounting requirements, and enforce DTNT terms.</p>
+                    <p>Saved app data remains on your PC until you remove it or the app replaces it. Speed-test history has delete and clear controls, and a saved device login can be cleared in IP Scanner. Local diagnostic logs rotate by size; they do not expire after a fixed number of days. DTNT normally stores settings and logs in the current user&#39;s local application-data area under <code>Denali Tech\DTNT</code>; Windows packaging can redirect this location. Exports and backups you save elsewhere must be managed separately. Contact support for help locating and removing retained local files.</p>
+                    <p>Clearing a local activation or uninstalling the app does not request deletion of Denali Tech&#39;s order and support records. Release an online activation through the app when you want to free the PC&#39;s seat; contact support if that is not possible. Deletion of the local device identifier alone does not release an existing server-side seat.</p>
+                    <h3>8. Privacy requests</h3>
+                    <p>Send requests for access, correction, or deletion of information Denali Tech controls to <a href="mailto:support@dt-nt.com">support@dt-nt.com</a>. Depending on applicable law, you may also have rights to object, restrict processing, obtain a portable copy, withdraw consent, opt out of certain disclosures, or complain to the relevant privacy authority. These rights and any exceptions depend on your location and the processing involved.</p>
+                    <p>Include enough information to identify the relevant purchase or support interaction, but do not send payment card details, saved network passwords, or device authentication tokens. Identity verification may be needed for requests that disclose or change private records. Legal, accounting, fraud-prevention, or security obligations can limit deletion where applicable law permits. Denali Tech cannot remotely delete exports or other copies under your control.</p>
+                    <h3>9. Children</h3>
+                    <p>DTNT is intended for technicians, installers, business owners, and other users performing network diagnostics. It is not directed to children under 13. If you believe a child has provided personal information to Denali Tech, contact <a href="mailto:support@dt-nt.com">support@dt-nt.com</a> so the matter can be reviewed.</p>
                 </article>
 
                 <article class="policy" id="refund">
                     <h2>Refund Policy</h2>
-                    <p class="section-copy">This refund policy applies to DTNT Pro software purchases unless Denali Tech states a different written offer before payment.</p>
+                    <p class="section-copy">This refund policy applies to DTNT Pro software purchases unless Denali Tech states a different written offer before payment. It describes Denali Tech's commercial refund review and does not replace mandatory cancellation, refund, repair, or other consumer remedies under applicable law.</p>
 
                     <h3>1. Standard refund window</h3>
                     <p>For first-time DTNT Pro purchases, contact Denali Tech within fourteen calendar days of the charge if you need a refund review.</p>
@@ -588,7 +602,8 @@
                     </ul>
 
                     <h3>3. Limits</h3>
-                    <p>Because DTNT is downloadable software and activation can be delivered immediately, refunds can be denied after successful delivery and substantial use, except where applicable law requires otherwise. Refund requests can also be denied for fraud, abuse, chargeback misuse, or purchases made in violation of these terms.</p>
+                    <p>For discretionary requests under this commercial policy, refunds can be denied after successful delivery and substantial use, except where applicable law requires otherwise. Downloading, receiving an activation code, or using the software does not by itself waive a statutory withdrawal or cancellation right. Where applicable law permits that right to end only after specific prior consent, acknowledgment, and confirmation, those requirements must be met before Denali Tech relies on that exception.</p>
+                    <p>Refund requests can also be denied for fraud, abuse, chargeback misuse, or purchases made in violation of DTNT terms.</p>
 
                     <h3>4. How to request one</h3>
                     <p>Email <a href="mailto:support@dt-nt.com">support@dt-nt.com</a> with the checkout email address, order reference, and a short explanation of the problem. If Denali Tech approves the refund, it is returned to the original payment method through the payment provider.</p>

@@ -4,6 +4,15 @@ Standalone product website for Denali Tech Net-Tools (DTNT).
 
 Canonical domain: https://dt-nt.com/
 Publisher: Denali Tech Inc
+
+Privacy controls live in `analytics.js`. Optional Google Analytics and Microsoft Advertising load only after their respective choices; Global Privacy Control suppresses both. Sensitive purchase and activation pages exclude tracking even with a saved opt-in. Deploy privacy notice changes together with the controls they describe.
+
+Run the dependency-free privacy regression suite with Node 24:
+
+```sh
+node --test tests/*.test.mjs
+```
+
 Current public version: 2.1.0-a.63
 Latest approved Store version: 2.1.0-a.63
 Primary install path: Microsoft Store product 9PFKHZ8M32HJ
