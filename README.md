@@ -13,8 +13,8 @@ Run the dependency-free privacy regression suite with Node 24:
 node --test tests/*.test.mjs
 ```
 
-Current public version: 2.1.0-a.63
-Latest approved Store version: 2.1.0-a.63
+Current public version: 2.1.0-a.68
+Latest approved Store version: 2.1.0-a.68
 Primary install path: Microsoft Store product 9PFKHZ8M32HJ
 
 This repo intentionally excludes generated customer order and license JSON artifacts. The purchase success flow should use the DTNT fulfillment API.
