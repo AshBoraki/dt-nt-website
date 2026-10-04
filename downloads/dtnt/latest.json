@@ -1,9 +1,9 @@
 {
   "product": "DTNT",
   "channel": "store",
-  "version": "2.1.0-a.76",
+  "version": "2.1.0-a.78",
   "displayVersion": "2.1.0",
-  "publishedAt": "2026-09-20T17:24:02-05:00",
+  "publishedAt": "2026-10-04T13:39:49-05:00",
   "releaseNotesUrl": "https://dt-nt.com/changelog/",
   "store": {
     "available": true,
