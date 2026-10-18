@@ -1,0 +1,15 @@
+DTNT Release Notes
+
+Public version: 2.1.0
+Technical version: 2.1.0-a.79
+Product: Denali Tech Net-Tools
+Install path: Microsoft Store
+Support: support@dt-nt.com
+
+What's improved:
+- Improved network detection and behavior across Windows laptops and adapters.
+- Improved Wi-Fi survey, IP Scanner, speed-test, and port-check reliability.
+- Improved accessibility and layout stability for normal field work.
+
+See the current public release notes:
+https://dt-nt.com/changelog/
