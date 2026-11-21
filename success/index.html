@@ -381,8 +381,8 @@
                     <li class="step">
                         <span class="step-index">3</span>
                         <div>
-                            <strong id="step-three-title">Choose Activate Pro in Profiles.</strong>
-                            <span id="step-three-copy">Open DTNT, go to Profiles, choose Activate Pro, and enter the purchase email plus activation code.</span>
+                            <strong id="step-three-title">Open Pro and choose Activate Pro.</strong>
+                            <span id="step-three-copy">In DTNT, enter the purchase email and activation code from your delivery email.</span>
                         </div>
                     </li>
                 </ul>
@@ -396,7 +396,7 @@
 
                 <div class="downloads">
                     <strong id="downloads-title">Open or install DTNT now.</strong>
-                    <p id="downloads-copy">If DTNT is already on this machine, open it and activate inside Profiles. If not, use the Microsoft Store path below and come right back.</p>
+                    <p id="downloads-copy">Open DTNT and select Pro to activate. If you need the app, install it from Microsoft Store below.</p>
                     <div class="actions">
                         <a class="button button-primary" data-dtnt-download="preferred" data-dtnt-store-text="Get DTNT from Microsoft Store" data-dtnt-installer-text="Install DTNT for Windows" data-dtnt-fallback-text="Get DTNT for Windows" href="https://apps.microsoft.com/detail/9PFKHZ8M32HJ">Get DTNT from Microsoft Store</a>
                         <a class="button button-primary" data-dtnt-download="appinstaller" href="/" hidden>Install DTNT</a>
@@ -586,16 +586,16 @@
                             successTitle.textContent = "DTNT Pro is ready.";
                             leadCopy.textContent = "Your payment is matched and the DTNT Pro delivery is ready.";
                             stepOneTitle.textContent = "Install or open DTNT.";
-                            stepOneCopy.textContent = "If DTNT is already installed from Microsoft Store, skip straight to Profiles.";
+                            stepOneCopy.textContent = "If DTNT is already installed, open it and select Pro.";
                             stepTwoTitle.textContent = "Check the activation code.";
-                            stepTwoCopy.textContent = "Use the purchase email plus activation code inside Profiles. Contact support if you need a backup activation method.";
+                            stepTwoCopy.textContent = "Enter the purchase email and activation code under Activate Pro. Contact support if you need a backup activation method.";
                             downloadsTitle.textContent = "Finish with install and activation.";
-                            downloadsCopy.textContent = "Use Microsoft Store if you still need the app, then choose Activate Pro inside Profiles and enter the purchase email plus activation code.";
+                            downloadsCopy.textContent = "Install DTNT from Microsoft Store if needed. In DTNT, open Pro and choose Activate Pro.";
                             deliveryTitle.textContent = "Your DTNT Pro delivery is ready.";
                             if (payload.purchaseEmail && payload.activationCode) {
-                                deliveryCopy.innerHTML = `Licensed to ${escapeHtml(payload.licensedTo)}. Activate inside Profiles with purchase email <strong>${escapeHtml(payload.purchaseEmail)}</strong> and activation code <strong>${escapeHtml(payload.activationCode)}</strong>. Keep your Stripe receipt for support.`;
+                                deliveryCopy.innerHTML = `Licensed to ${escapeHtml(payload.licensedTo)}. Open Pro and select Activate Pro. Enter purchase email <strong>${escapeHtml(payload.purchaseEmail)}</strong> and activation code <strong>${escapeHtml(payload.activationCode)}</strong>. Keep your Stripe receipt for support.`;
                             } else {
-                                deliveryCopy.textContent = `Licensed to ${payload.licensedTo}. Check the delivery email for the activation code, then activate inside Profiles. Contact support if you need a backup activation method.`;
+                                deliveryCopy.textContent = `Licensed to ${payload.licensedTo}. Check the delivery email for the activation code, then open Pro and choose Activate Pro in DTNT. Contact support if you need a backup activation method.`;
                             }
                             return;
                         }
