@@ -1,0 +1,16 @@
+DTNT Release Notes
+
+Version: 2.1.0-a.82
+Microsoft Store package: 2.1.82.0 (x64)
+Product: Denali Tech Net-Tools
+Install path: https://apps.microsoft.com/detail/9PFKHZ8M32HJ
+Support: support@dt-nt.com
+
+What's improved:
+- Clearer IP Scanner rows with MAC addresses, filters, and saved notes, rooms, and pins.
+- Device and service identification separates current scan evidence from earlier observations.
+- Device response monitoring and connection diagnostics for DNS, TLS certificates, and IPv4 packet sizes.
+- Improved Wi-Fi availability, speed test gauges, channel charts, keyboard copy actions, and exported reports.
+
+See the current public release notes:
+https://dt-nt.com/changelog/
