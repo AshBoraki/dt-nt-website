@@ -1,0 +1,16 @@
+DTNT Release Notes
+
+Version: 2.1.0-a.89
+Microsoft Store package: 2.1.89.0 (x64)
+Product: Denali Tech Net-Tools
+Install path: https://apps.microsoft.com/detail/9PFKHZ8M32HJ
+Support: support@dt-nt.com
+
+What's improved:
+- Speed test server selection, timed runs, and a full-screen chart for showing results.
+- Guided troubleshooting and service jobs with commissioning checklists and attached evidence.
+- Separate IP Scanner entries for addresses that share a MAC address.
+- More readable desktop workspaces and an updated .NET runtime with security fixes.
+
+See the current public release notes:
+https://dt-nt.com/changelog/
