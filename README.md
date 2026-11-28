@@ -13,7 +13,7 @@ Run the dependency-free privacy regression suite with Node 24:
 node --test tests/*.test.mjs
 ```
 
-Current public version: 2.1.0-a.89
+Current public version: 2.1.0-a.90
 Latest public Store package: 2.1.89.0 (x64)
 Primary install path: Microsoft Store product 9PFKHZ8M32HJ
 

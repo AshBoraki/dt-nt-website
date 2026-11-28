@@ -14,7 +14,7 @@
         activationUrl: "/#activation",
         supportEmail: "support@dt-nt.com",
         supportSubject: "DTNT order help",
-        launchPriceLabel: "$59 one time",
+        launchPriceLabel: "$59 USD one time",
         launchPriceAmountUsd: 59,
         regularPriceLabel: "$99 after launch"
     };
